@@ -1,0 +1,177 @@
+DDL(Data Defination Language)
+Create,Alter,Drop,Truncate,Rename
+1.Create
+Syntax:create database_name;
+ex. create database Sample;
+Syntax:create table table_name(column name1 (datatype),column name1 (datatype),...);
+ex.create table Student(id int,name varchar(100),address varchar(100));
+create table emp(id int,name varchar(100) not null,address varchar(100) null,job_desc varchar(20) not null,primary key(id)); 
+
+show databases;
+use mysql;  
+show tables;
+ create database Demo;
+create table Student(id int,name varchar(100),address varchar(100));
+desc student;
+drop table student; 
+create table Employee(id int not null,name varchar(100),address varchar(100),salary int(20));
+ alter table employee add jobDesc varchar(20);
+ alter table employee change id eid int(10);
+ insert into employee values (1,"rajshree","1,xyz,abc",589659,"Software engineer"); 
+ select * from employee; 
+ rename table employee to emp;  
+ drop table emp; 
+ create table emp(id int,name varchar(100) not null,address varchar(100) null,job_desc varchar(20) not null,primary key(id)); 
+ update dept set dept_name='prod' where id=1;
+ delete from dept where id=1;
+ select id,lastname,email from employee;
+select * from employee where id=1;
+select firstname,lastname,salary,deptname from employee where id=1;
+
+Alias for column name using as and with quotation
+ select firstname as fname from employee;
+select salary s from employee;
+ select salary as 's f' from employee;
+
+Oprators
+select firstname,lastname,salary,salary+1000 as increment from employee where salary <15000;
+select firstname,lastname,salary,salary-1000 as decrement from employee where deptname = "comp";
+select firstname,lastname,salary,salary*0.6 as basic from employee where deptname = "comp";
+select firstname,lastname,salary,salary/100 as tax from employee where deptname = "comp";
+select firstname,lastname,salary from employee where salary != 15000;
+select firstname,lastname,salary from employee where salary <>15000;/not equal
+ select * from webinfo where web1 <=>null;
+select * from webinfo where web1 <=>web2;
+select * from employee where salary >10000 And deptname = "comp";
+select * from employee where salary >10000 or deptname = "comp";
+select * from employee where not salary =10000;
+select * from employee where salary in (10000,35000,20000);
+ select * from employee where salary between 10000 and 25000;
+select * from employee where salary not in (15000,35000,5000);
+select * from employee where salary not between 15000 and 35000;
+select * from employee where salary is null;
+select * from employee where salary is not null;
+select * from employee where firstname like '%e';//ends with e
+select * from employee where firstname like 'r%';//starts with r
+ select * from employee where firstname like '__j%';//third letter j from starting
+select * from employee where firstname like '%a%a%';//contains 2 a's
+select * from employee where firstname like 'a%n';//starts with a and ends with n
+ select * from employee where firstname like 'r%' or firstname like 'a%';//starts with r or a
+ select * from employee where firstname not like 'r%';//not starts with r
+
+*Functions
+Aggregate functions
+select avg(salary) as avg from employee ;//average
+ select sum(salary) as sum from employee ;//sum
+select min(salary) as min from employee ;//min
+select max(salary) as max from employee ;//max
+select count(salary) as count from employee ;//count
+ select count(*) from employee where salary <15000;//count on condition
+ select count(*) ,sum(salary) from employee where salary <15000;//count on condition and sum for result of condition
+select sum(salary),avg(salary),min(salary),max(salary) from employee where deptname="comp";//
+
+Scalar functions/Single row functions
+Upper,Lower,Length,Concat,Reverse,SubStr
+ select upper(firstname) from employee;//Converts the string in upper case
+ select lower(firstname) from employee;//Converts the string in lower case
+ select reverse(firstname) from employee;//Reverse the characters in string 
+ select firstname,length(firstname) as len from employee;//returns length of string specified by column name
+CONCAT()-
+Syntax:SELECT concat(string1,string2) from Table_name;
+ select firstname,concat("Hi ",firstname) as message from employee;//Concats the two strings or two column values
+SUBSTR()-
+Syntax:SELECT substr(string,position,length) from Table_name;
+ select firstname,email,substr(email,4,12) from employee;//returns substring from given column name from given position with specified length
+INSTR()-
+Syntax:SELECT instr(string,substring) from Table_name;
+ select firstname,email,instr(email,"com") from employee;//returns the position if the substring present in given column name
+
+Transaction control Language(TCL)
+Commit,rollback,savepoint
+
+ set autocommit=0;//set autocommit to false as by default its true
+ delete  from employee where id=2;
+select * from employee;//record with id =2 is missing
+rollback;
+select * from employee;//get all data including id=2 data as not commited
+Once do commit ,get saved
+
+savepoint a;
+insert into employee values(8,'bhagya','o',80000,'IOS','CnM',"bhagya@yahoo.com");
+ savepoint b;
+delete from employee where id=2;
+ rollback to a; //rollbacked to savepoint a and deleted record with id =2 as it rollbacked to previous savepoint 
+
+
+Clause
+Order By - used to sort result set in ascending or descending order
+Syntax: Select * from table name order by column name asc|desc;
+Ex.select * from employee order by salary desc;'
+
+Group by - group rows that have same values into summary rows.Often used with Aggregate functions(min,max,Sum,Avg,Count)
+Syntax:select column name1,column name2.. from table name where condition group by column name1,column name 2;
+ex.select dept_no, sum(salary) from employee  group by dept_no;
+select count(*) from employee group by dept_no;
+
+
+SubQueries
+Returning data from multiple tables
+Two Types -Single row subquery 
+		multirow subquery
+Single row subquery should return single records, use relational operators(=,<,>,<=,>=,==,!=)
+Syntax: SELECT column 1.column 2 ..from table name Where column 1 OPERATOR (Select column from table name where expr 1=value);
+Ex.Select * from employee where salary = (Select max(salary) from employee);
+
+Multi Row subquery - multi value operators are used(In)
+			returns one or more number of rows.
+
+Syntax: SELECT column 1.column 2 ..from table name Where column 1 OPERATOR (Select column from table name where expr 1=value);
+ex.select first_name,dept_no,salary from employee where salary in (select max(salary) from employee group by dept_no);
+
+
+Joins
+Atleast two tables are required
+CROSS JOIN - Combination of all the records in the tables
+Syntax: SELECT column 1.column 2 ..from table name1 CROSS JOIN table name2;
+ex.  select * from employee CROSS join dept;
+
+INNER JOIN
+Gives all matching records from tables
+
+select * from employee e INNER JOIN dept d on e.dept_no=d.dept_no;
+select * from employee e INNER JOIN dept d on e.dept_no=d.dept_no where salary > 10000 And loc="delhi";
+select e.first_name,e.last_name,e.salary,d.dname from employee e inner join department d on e.dept_no=d.dept_no where e.first_name like 'a%c';
+
+without join
+select * from employee e , dept d where e.dept_no=d.dept_no and salary > 10000 and loc="delhi";
+
+
+OUTER JOIN
+Gives all matching and not matching records
+
+LEFT OUTER JOIN
+return all rows from left table and only matching record from right table
+
+ex.select * from employee e left join department d on e.dept_no=d.dept_no;
+
+
+
+RIGHT OUTER JOIN
+return all rows from right table and only matching record from left table
+
+ex.select * from employee e right join department d on e.dept_no=d.dept_no;
+
+Views-create view,alter,insert into and delete from view
+
+Stored Procedure-
+Like functions
+Uses IN as input to function 
+OUT as output from function
+
+
+Trigger
+Like stored procedure automatically invokes whenever a special event in the database occurs.
+
+
+
+
