@@ -1,0 +1,30 @@
+package com.techchefs.javaapp.stream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+import lombok.extern.java.Log;
+
+@Log
+public class StreamFilterLambdaEx {
+	public static void main(String[] args) {
+		ArrayList<Integer> l = new ArrayList<Integer>();
+		l.add(45);
+		l.add(5);
+		l.add(40);
+		l.add(9);
+
+		Predicate<Integer> x = i -> i % 2 != 0;
+
+		List<Integer> li = l.stream().filter(x).collect(Collectors.toList());
+		log.info("" + li);
+		
+		long number=l.stream().filter(x).count();
+		log.info("Number of objects : "+number);
+
+		List<Integer> l1 = l.stream().filter(i -> i % 3 == 0).collect(Collectors.toList());
+		log.info("" + l1);
+	}
+}
