@@ -1,0 +1,46 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    width: 100%;
+    background: black;
+}
+ul{
+    margin: 0;
+}
+li{
+    display: inline;
+}
+ul,li,a{
+    text-decoration: none;
+    padding: 10px;
+    color: aliceblue;
+   display: inline-block;
+   }
+button{
+    width: 259px;
+    height:40px;
+    border-radius: 15px;
+    margin: 40px;
+}
+button:hover{
+    width: 259px;
+    height:40px;
+    border-radius: 15px;
+    margin: 40px;
+    background: lightseagreen;
+    box-shadow: 0 0 10px 8px orange;
+}
+#login:active{
+    width: 250px;
+    color: black;
+    padding: 15px;
+    background:lavender;
+}
+p::selection{
+    background: blue;
+    color:brown;
+    display: inline-block;
+    
+}
