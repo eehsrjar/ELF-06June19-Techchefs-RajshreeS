@@ -3,7 +3,7 @@ package com.techchefs.javaapp.collection;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-public class TreeSetDemo1 {
+public class TreeSetDemoA {
 
 	public static void main(String[] args) {
 		TreeSet hs = new TreeSet();
@@ -14,16 +14,14 @@ public class TreeSetDemo1 {
 		hs.add(3);
 		hs.add(12);
 		hs.add(5);
-		
-		for(Object o : hs)
-		{
+
+		for (Object o : hs) {
 			System.out.println(o);
 		}
-		
+
 		Iterator it = hs.iterator();
-		while(it.hasNext())
-		{
-			Object o =it.next();
+		while (it.hasNext()) {
+			Object o = it.next();
 			System.out.println(o);
 		}
 	}

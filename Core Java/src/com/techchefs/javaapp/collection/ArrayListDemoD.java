@@ -3,7 +3,7 @@ package com.techchefs.javaapp.collection;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
-public class ArrayListDemo4 {
+public class ArrayListDemoD {
 
 	public static void main(String[] args) {
 		ArrayList<String> lls= new ArrayList<>();

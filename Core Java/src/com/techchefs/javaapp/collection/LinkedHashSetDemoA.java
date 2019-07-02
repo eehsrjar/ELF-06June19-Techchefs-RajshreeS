@@ -3,7 +3,7 @@ package com.techchefs.javaapp.collection;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-public class LinkedHashSetDemo1 {
+public class LinkedHashSetDemoA {
 
 	public static void main(String[] args) {
 		LinkedHashSet hs = new LinkedHashSet();

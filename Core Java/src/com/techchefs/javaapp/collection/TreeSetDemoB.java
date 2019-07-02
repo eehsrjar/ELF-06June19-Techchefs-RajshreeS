@@ -3,7 +3,7 @@ package com.techchefs.javaapp.collection;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-public class TreeSetDemo2 {
+public class TreeSetDemoB {
 
 	public static void main(String[] args) {
 		TreeSet<String> hs =new TreeSet<String>();

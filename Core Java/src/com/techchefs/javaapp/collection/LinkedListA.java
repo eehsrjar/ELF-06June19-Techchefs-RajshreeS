@@ -1,32 +1,34 @@
 package com.techchefs.javaapp.collection;
 
-import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.ListIterator;
-import java.util.Vector;
 
-public class VectorDemo1 {
+public class LinkedListA {
 
 	public static void main(String[] args) {
-		Vector v = new Vector();
-		v.add(2);
-		v.add('e');
-		v.add(2.5);
-		v.add("vhy");
+		LinkedList ll =new LinkedList();
+		ll.add(14);
+		ll.add(null);
+		ll.add(5.7);
+		ll.add('A');
+		ll.add("training");
+		ll.add('A');
+		ll.add(null);
 		
-		for(Object o : v)
+		for(Object o :ll)
 		{
 			System.out.println(o);
 		}
-		
-		Iterator it = v.iterator();
+		System.out.println("**************");
+		Iterator it = ll.iterator();
 		while(it.hasNext())
 		{
 			Object o =it.next();
 			System.out.println(o);
 		}
 		System.out.println("**************");
-		ListIterator list=v.listIterator();
+		ListIterator list=ll.listIterator();
 		while(list.hasNext())
 		{
 			Object o =list.next();
@@ -38,13 +40,7 @@ public class VectorDemo1 {
 			Object o =list.previous();
 			System.out.println(o);
 		}
-		System.out.println("**************");
-		Enumeration e =v.elements();
-		while(e.hasMoreElements())
-		{
-			Object o = e.nextElement();
-			System.out.println(o);
-		}
+	
 	}
 
 }

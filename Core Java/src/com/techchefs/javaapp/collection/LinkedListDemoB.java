@@ -4,31 +4,37 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class LinkedList1 {
+public class LinkedListDemoB {
 
 	public static void main(String[] args) {
-		LinkedList ll =new LinkedList();
-		ll.add(14);
-		ll.add(null);
-		ll.add(5.7);
-		ll.add('A');
-		ll.add("training");
-		ll.add('A');
-		ll.add(null);
+		LinkedList<Character> cl = new LinkedList<Character>();
+		cl.add('c');
+		cl.add('A');
+		cl.add('H');
+		cl.add('N');
+		cl.add('L');
+		cl.add('W');
 		
-		for(Object o :ll)
+		for(int i=0;i<cl.size();i++)
 		{
-			System.out.println(o);
+			Character c= cl.get(i);
+			System.out.println(c);
 		}
 		System.out.println("**************");
-		Iterator it = ll.iterator();
+		for(Character r : cl)
+		{
+			System.out.println(r);
+		}
+		System.out.println("**************");
+		
+		Iterator it = cl.iterator();
 		while(it.hasNext())
 		{
 			Object o =it.next();
 			System.out.println(o);
 		}
 		System.out.println("**************");
-		ListIterator list=ll.listIterator();
+		ListIterator list=cl.listIterator();
 		while(list.hasNext())
 		{
 			Object o =list.next();
@@ -40,7 +46,6 @@ public class LinkedList1 {
 			Object o =list.previous();
 			System.out.println(o);
 		}
-	
 	}
 
 }

@@ -3,7 +3,7 @@ package com.techchefs.javaapp.collection;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class HashSetDemo2 {
+public class HashSetDemoB {
 
 	public static void main(String[] args) {
 		HashSet hs = new HashSet();

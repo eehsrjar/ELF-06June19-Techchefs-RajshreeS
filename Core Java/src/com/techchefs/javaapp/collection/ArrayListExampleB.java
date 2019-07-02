@@ -2,7 +2,7 @@ package com.techchefs.javaapp.collection;
 
 import java.util.ArrayList;
 
-public class ArrayListDemo {
+public class ArrayListExampleB {
 
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
@@ -13,7 +13,11 @@ public class ArrayListDemo {
 		list.add("training");
 		list.add('A');
 		list.add(null);
-		System.out.println(list);
+		
+		for(Object o : list)
+		{
+			System.out.println(o);
+		}
 	}
 
 }

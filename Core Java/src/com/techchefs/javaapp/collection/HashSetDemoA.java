@@ -1,12 +1,12 @@
 package com.techchefs.javaapp.collection;
 
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 
-public class LinkedHashSetDemo2 {
+public class HashSetDemoA {
 
 	public static void main(String[] args) {
-		LinkedHashSet<String> hs =new LinkedHashSet<String>();
+		HashSet<String> hs = new HashSet<String>();
 		hs.add("Ram");
 		hs.add("Sham");
 		hs.add("Van");

@@ -2,7 +2,7 @@ package com.techchefs.javaapp.collection;
 
 import java.util.TreeSet;
 
-public class TreeSetExample3 {
+public class TreeSetExampleC {
 
 	public static void main(String[] args) {
 		TreeSet<Student> tr= new TreeSet<Student>();

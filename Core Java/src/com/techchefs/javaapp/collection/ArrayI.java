@@ -2,7 +2,10 @@ package com.techchefs.javaapp.collection;
 
 import java.util.ArrayList;
 
-public class Array8 {
+import lombok.extern.java.Log;
+
+@Log
+public class ArrayI {
 
 	public static void main(String[] args) {
 		ArrayList<Double> l = new ArrayList<Double>();
@@ -12,15 +15,11 @@ public class Array8 {
 		l.add(2.4);
 		l.add(3.6);
 		
-		System.out.println("Before ----->"+l);
+		log.info("Before ----->"+l);
 		
-		ArrayList<Double> l1 = new ArrayList<Double>();
-		l1.add(19.2);
-		l1.add(11.6);
+		l.toArray();
 		
-		l.addAll(2,l1);
-		
-		System.out.println("After ----->"+l);
+		log.info("After ----->"+l);
 	}
 
 }

@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class HashMapDemo2 {
+public class HashMapDemoB {
 
 	public static void main(String[] args) {
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();

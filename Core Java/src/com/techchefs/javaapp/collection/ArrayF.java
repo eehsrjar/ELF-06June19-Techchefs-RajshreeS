@@ -2,7 +2,10 @@ package com.techchefs.javaapp.collection;
 
 import java.util.ArrayList;
 
-public class Array6 {
+import lombok.extern.java.Log;
+
+@Log
+public class ArrayF {
 
 	public static void main(String[] args) {
 		ArrayList<Double> l = new ArrayList<Double>();
@@ -13,14 +16,14 @@ public class Array6 {
 		l.add(3.6);
 		l.add(19.2);
 		l.add(11.6);
-		System.out.println("Contains value "+l.contains(1.69));
-		System.out.println("Before ----->"+l);
+		log.info("Contains value " + l.contains(1.69));
+		log.info("Before ----->" + l);
 		ArrayList<Double> l1 = new ArrayList<Double>();
 		l1.add(19.2);
 		l1.add(11.6);
 		l.removeAll(l1);
-		
-		System.out.println("After ----->"+l);
+
+		log.info("After ----->" + l);
 	}
 
 }
