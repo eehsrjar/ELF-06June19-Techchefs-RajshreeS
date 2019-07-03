@@ -1,12 +1,14 @@
 package com.techchefs.javaapp.lambdaexp;
 
-public class CheckStrLen {
+import java.util.logging.Logger;
 
+public class CheckStrLen {
+	private static final Logger log = Logger.getLogger("Assignment");
 	public static void main(String[] args) {
 		StringLength s = str -> str.length();
-		
+
 		int res = s.getStrLen("Techchefs");
-		System.out.println(res);
+		log.info(""+ res);
 	}
 
 }

@@ -2,16 +2,14 @@ package com.techchefs.javaapp.lambdaexp;
 
 import java.util.logging.Logger;
 
-interface Square {
-	int square(int a);
-}
-
-public class CalculateSquare {
+public class TwoNoAdditionTest {
 	private static final Logger log = Logger.getLogger("Assignment");
 	public static void main(String[] args) {
-		Square s = a -> a * a;
-		int res = s.square(5);
-		log.info(""+ res);
+		TwoNoAddition t = (a,b) -> {
+			return (a+b);
+		};
+		int res = t.add(13, 6);
+		log.info(""+res);
 	}
 
 }
