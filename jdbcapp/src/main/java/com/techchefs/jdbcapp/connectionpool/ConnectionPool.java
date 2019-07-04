@@ -22,24 +22,17 @@ public class ConnectionPool {
 		initializePool();
 
 	}
+
 	public static ConnectionPool getConnectionPool() throws Exception {
-		if (poolRef != null) {
-			return poolRef;
-		} else {
+		if (poolRef == null) {
 			return new ConnectionPool();
 		}
-	}
-	
-	public Connection getConnectioFromPool() {
-		return pool.remove(0);
-	}
+		return poolRef;
 
-	public void returnConnectionToPool(Connection con) {
-		pool.add(con);
 	}
 
 	private void loadProperties() throws Exception, IOException {
-		
+
 		poolSize = Integer.parseInt(PropertyUtil.getProertyUtil().getProperty(ConnectionPoolConstants.POOL_SIZE));
 		dbUrl = PropertyUtil.getProertyUtil().getProperty(ConnectionPoolConstants.DB_URL);
 		username = PropertyUtil.getProertyUtil().getProperty(ConnectionPoolConstants.USER_NAME);
@@ -49,7 +42,7 @@ public class ConnectionPool {
 
 	private void initializePool() throws Exception {
 		pool = new Vector<>();
-		 Connection con = null;
+		Connection con = null;
 		Class.forName(driverClassname);
 		for (int i = 0; i < poolSize; i++) {
 			con = DriverManager.getConnection(dbUrl, username, password);
@@ -57,7 +50,12 @@ public class ConnectionPool {
 		}
 	}
 
-	
+	public Connection getConnectioFromPool() {
+		return pool.remove(0);
+	}
 
-	
+	public void returnConnectionToPool(Connection con) {
+		pool.add(con);
+	}
+
 }

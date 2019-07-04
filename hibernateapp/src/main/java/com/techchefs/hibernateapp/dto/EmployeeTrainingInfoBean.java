@@ -1,4 +1,4 @@
-package com.techchefs.jdbcapp.beans;
+package com.techchefs.hibernateapp.dto;
 
 import java.io.Serializable;
 
