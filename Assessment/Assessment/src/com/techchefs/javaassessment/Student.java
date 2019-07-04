@@ -4,11 +4,13 @@ public class Student {
 	int roleNumber;
 	String name;
 	double percentage;
+	String gender;
 
-	public Student(int roleNumber, String name, Double percentage) {
+	public Student(int roleNumber, String name, Double percentage,String gender) {
 		this.roleNumber = roleNumber;
 		this.name = name;
 		this.percentage = percentage;
+		this.gender=gender;
 	}
 
 	public int getRoleNumber() {
@@ -21,6 +23,10 @@ public class Student {
 
 	public double getPercentage() {
 		return this.percentage;
+	}
+	
+	public String getGender() {
+		return this.gender;
 	}
 
 	@Override

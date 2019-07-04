@@ -8,7 +8,7 @@ import lombok.extern.java.Log;
 public class StudentPassFailTest {
 
 	public static void main(String[] args) {
-		Student s = new Student(2, "John", 30.00);
+		Student s = new Student(2, "John", 30.00,"male");
 
 		Predicate<Student> p = st -> st.getPercentage() > 35;
 		boolean res = p.test(s);

@@ -12,11 +12,11 @@ public class StudentSortTest {
 
 	public static void main(String[] args) {
 
-		Student s1 = new Student(2, "John", 30.00);
-		Student s2 = new Student(9, "Abhay", 75.50);
-		Student s3 = new Student(1, "Ria", 60.00);
-		Student s4 = new Student(7, "Yogesh", 87.00);
-		Student s5 = new Student(5, "Leena", 48.00);
+		Student s1 = new Student(2, "John", 30.00,"male");
+		Student s2 = new Student(9, "Abhay", 75.50,"male");
+		Student s3 = new Student(1, "Ria", 60.00,"female");
+		Student s4 = new Student(7, "Yogesh", 87.00,"male");
+		Student s5 = new Student(5, "Leena", 48.00,"Female");
 
 		TreeSet<Student> ts = null;
 
