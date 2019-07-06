@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class EmployeeBean {
-	
+
 	private int id;
 	private String name;
 	private String department;
@@ -14,5 +14,5 @@ public class EmployeeBean {
 	private int age;
 	private Date joiningDate;
 	private String gender;
-	
+
 }

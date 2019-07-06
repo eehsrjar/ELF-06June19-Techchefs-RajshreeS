@@ -1,7 +1,7 @@
 package com.techchefs.javaapp.classbean;
 
 public class Demo {
-	final int a = 10;
+	static final int A = 10;
 	int b;
 
 	Demo(int b) {

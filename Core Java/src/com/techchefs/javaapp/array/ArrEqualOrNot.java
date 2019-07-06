@@ -2,11 +2,14 @@ package com.techchefs.javaapp.array;
 
 import java.util.Arrays;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ArrEqualOrNot {
 
 	public static void main(String[] args) {
-		int arr1[] = {2,4,9,9};
-		int arr2[] = {2,4,7,9};
+		int[] arr1 = { 2, 4, 9, 9 };
+		int[] arr2 = { 2, 4, 7, 9 };
 		boolean flag = false;
 //		if(arr1.length == arr2.length)
 //		{
@@ -27,12 +30,10 @@ public class ArrEqualOrNot {
 //			System.out.println("Arrays are not equal");
 //		}
 		flag = Arrays.equals(arr1, arr2);
-		if(flag)
-		{
-			System.out.println("Arrays are equal");
-		}else
-		{
-			System.out.println("Arrays are not equal");
+		if (flag) {
+			log.info("Arrays are equal");
+		} else {
+			log.info("Arrays are not equal");
 		}
 	}
 

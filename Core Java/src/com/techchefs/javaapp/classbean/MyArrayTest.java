@@ -2,7 +2,6 @@ package com.techchefs.javaapp.classbean;
 
 import java.util.logging.Logger;
 
-
 public class MyArrayTest {
 	private static final Logger log = Logger.getLogger("Array");
 
