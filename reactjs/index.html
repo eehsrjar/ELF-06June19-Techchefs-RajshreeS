@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .green{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+   <!--  Target Container -->
+   <div id="react-container"></div>
+    <script  src="https://unpkg.com/react@15.4.2/dist/react.js"></script>
+    <script  src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.js"></script>
+    <script>
+        const items=['pen','pencil','bag'];
+       /*  Pure react and Javascript code */
+       const item=React.createElement("h1",{className:'green',item:items},"React Simple Example")
+       const list=React.createElement("ul",null,React.createElement('li',null,'Item1'),
+                            React.createElement('li',null,'Item2'),React.createElement('li',null,'Item3'))
+
+        const itemArr=React.createElement('ul',null,items.map(function(val,index){
+            return React.createElement('li',{key :index},val);
+        })    )                
+       //ReactDOM.render(item,document.getElementById("react-container"));
+       ReactDOM.render(list,document.getElementById("react-container"));
+        console.log(item);
+        console.log(itemArr);
+    </script>  
+</body>
+</html>
