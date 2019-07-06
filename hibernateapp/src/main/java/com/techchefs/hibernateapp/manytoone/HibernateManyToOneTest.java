@@ -23,8 +23,8 @@ public class HibernateManyToOneTest {
 		bean.setEmail("jaya@gmail.com");
 		bean.setDob(dateFormat.parse("1992-10-12"));
 		bean.setDesignation("Analyst");
-		bean.setDepartmentId(30);
-		bean.setManagerId(1000);
+//		bean.setDepartmentId(30);
+//		bean.setManagerId(1000);
 		
 		EmployeeAddressPKBean addressPKBean1=new EmployeeAddressPKBean();
 		addressPKBean1.setAddressType("Permanent");

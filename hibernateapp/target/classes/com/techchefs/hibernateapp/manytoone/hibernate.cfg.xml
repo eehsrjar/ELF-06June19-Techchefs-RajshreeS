@@ -24,6 +24,7 @@
 		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeEducationalInfoBean"/>
 		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeExperienceInfoBean"/>
 		<mapping class="com.techchefs.hibernateapp.manytomany.TrainingInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytoone.DepartmentInfoBean"/>
       <!--   <mapping resource="book.hbm.xml" /> -->
     </session-factory>
 </hibernate-configuration>

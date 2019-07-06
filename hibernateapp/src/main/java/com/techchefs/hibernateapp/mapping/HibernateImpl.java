@@ -77,5 +77,11 @@ public class HibernateImpl {
 		txn.commit();
 		session.close();
 	}
-	
+	public void createEmployee(EmployeeInfoBean bean) {
+		Session session=factory.openSession();
+		Transaction txn=session.beginTransaction();
+		session.save(bean);
+		txn.commit();
+		session.close();
+	}
 }

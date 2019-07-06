@@ -23,8 +23,8 @@ public class HibernateManyToOneEmplExperienceTest {
 		bean.setEmail("jaya@gmail.com");
 		bean.setDob(dateFormat.parse("1992-10-12"));
 		bean.setDesignation("Analyst");
-		bean.setDepartmentId(30);
-		bean.setManagerId(1000);
+//		bean.setDepartmentId(30);
+//		bean.setManagerId(1000);
 		
 		EmployeeExperiencePKBean expPKBean=new EmployeeExperiencePKBean();
 		expPKBean.setCompanyName("Techchefs");

@@ -22,8 +22,8 @@ public class ManyToManyTest {
 		bean.setEmail("naren@gmail.com");
 		bean.setDob(dateFormat.parse("1993-10-12"));
 		bean.setDesignation("Analyst");
-		bean.setDepartmentId(10);
-		bean.setManagerId(1111);  
+//		bean.setDepartmentId(10);
+//		bean.setManagerId(1111);  
 		
 		
 		EmployeeInfoBean bean2=new EmployeeInfoBean();
@@ -38,8 +38,8 @@ public class ManyToManyTest {
 		bean2.setEmail("soundarya@gmail.com");
 		bean2.setDob(dateFormat.parse("1993-10-12"));
 		bean2.setDesignation("Software Trainee");
-		bean2.setDepartmentId(20);
-		bean2.setManagerId(1111);
+//		bean2.setDepartmentId(20);
+//		bean2.setManagerId(1111);
 		
 		
 		EmployeeInfoBean bean3=new EmployeeInfoBean();
@@ -54,8 +54,8 @@ public class ManyToManyTest {
 		bean3.setEmail("ria@gmail.com");
 		bean3.setDob(dateFormat.parse("1993-10-12"));
 		bean3.setDesignation("Software Developer");
-		bean3.setDepartmentId(30);
-		bean3.setManagerId(1111);
+//		bean3.setDepartmentId(30);
+//		bean3.setManagerId(1111);
 		
 		TrainingInfoBean trainingInfoBean=new TrainingInfoBean();
 		trainingInfoBean.setInfoBeans(Arrays.asList(bean,bean2,bean3));

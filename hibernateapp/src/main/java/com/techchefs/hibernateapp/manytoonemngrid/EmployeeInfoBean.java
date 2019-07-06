@@ -1,33 +1,21 @@
-package com.techchefs.hibernateapp.manytoone;
+package com.techchefs.hibernateapp.manytoonemngrid;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 
 import lombok.Data;
 @Data
 @Entity
 @Table(name="employee_info")
 public class EmployeeInfoBean implements Serializable{
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "bean")
-	private EmployeeOtherInfoBean employeeOtherInfoBean;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "addressPKBean.empInfoBean")
-	private List<EmployeeAddressInfoBean> addressInfoBeans;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "educationPKBean.empInfoBean")
-	private List<EmployeeEducationalInfoBean> educationInfoBean;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "expPKBean.empInfoBean")
-	private List<EmployeeExperienceInfoBean> experienceInfoBean;
 	@Id
 	private int id;
 	@Column(name="name")
@@ -43,15 +31,13 @@ public class EmployeeInfoBean implements Serializable{
 	private String email;
 	private String designation;
 	private Date dob;
-//	@Column(name="dept_id")
-//	private int departmentId;
-	@ManyToOne
-	@JoinColumn(name="dept_id")
-	private DepartmentInfoBean departmentId;
+	@Column(name="dept_id")
+	private int departmentId;
 //	@Column(name="mngr_id")
 //	private int managerId;
 	
-	  @JoinColumn(name="mngr_id",referencedColumnName = "id")	  
+	  @JoinColumn(name="mngr_id",referencedColumnName = "id")
+	  
 	  @ManyToOne 
 	  private EmployeeInfoBean managerId;
 	 
