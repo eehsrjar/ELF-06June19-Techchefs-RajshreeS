@@ -15,8 +15,8 @@ public class EmployeeInfoBean implements Serializable{
 	private String email;
 	private String designation;
 	private Date dob;
-	private int deptId;
-	private int mngrId;
+	private int departmentId;
+	private int managerId;
 	
 	public EmployeeInfoBean() {
 	}
@@ -109,20 +109,20 @@ public class EmployeeInfoBean implements Serializable{
 		this.dob = dob;
 	}
 
-	public int getDeptId() {
-		return deptId;
+	public int getDepartmentId() {
+		return departmentId;
 	}
 
-	public void setDeptId(int deptId) {
-		this.deptId = deptId;
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
 
-	public int getMngrId() {
-		return mngrId;
+	public int getManagerId() {
+		return managerId;
 	}
 
-	public void setMngrId(int mngrId) {
-		this.mngrId = mngrId;
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
 	}
 
 	
