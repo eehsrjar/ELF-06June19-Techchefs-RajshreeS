@@ -24,13 +24,13 @@
 
 
 		<!-- <form class="form-inline my-2 my-lg-0" action="./validate" method="GET"> -->
-		<form class="form-inline my-2 my-lg-0" action="../validator/validate/employee/search" method="GET">
+		<form class="form-inline my-2 my-lg-0 ml-auto" action="../validator/validate/employee/search" method="GET">
 			<input class="form-control mr-sm-2" type="search"
 				placeholder="Search" name="id" aria-labelSearch>
 				<!-- <input type="hidden" name="url" value="search"> -->
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
-		<h6>Welcome ${bean.empName }</h6>
+		<h6 class="ml-auto">Welcome ${bean.empName }</h6>
 		<a class="ml-auto" href="./logout">Logout</a>
 	</nav>
 	
