@@ -30,14 +30,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.techchefs.emp.dto.EmployeeInfoBean;
+
+import lombok.extern.java.Log;
+
 import com.techchefs.emp.dao.EmployeeDAO;
 import com.techchefs.emp.dao.EmployeeDAOHibernateImpl;
-
+@Log
 @Controller
 @RequestMapping("/employee")
 @PropertySource("classpath:msg.properties")
 public class EmployeeController {
-
+	@InitBinder
+    public void initBinder(WebDataBinder binder) {
+	  CustomDateEditor editor=new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true);
+        binder.registerCustomEditor(Date.class, editor);
+    }
 	@Autowired
 	@Qualifier(DB_INTERACTION_TYPE)
 	EmployeeDAO dao;
@@ -60,6 +67,17 @@ public class EmployeeController {
 		map.addAttribute("bean", bean);
 		return VIEW_HOME_PAGE;
 
+	}
+	@GetMapping("/updateEmployee")
+	public String getUpdateEmployee() {
+		return "updateEmployee";
+	}
+	@PostMapping("/updateEmployee")
+	public String updateEmployee(EmployeeInfoBean bean,int mngId) {
+		EmployeeInfoBean mngBean=dao.getEmployeeInfo(mngId);
+		bean.setManagerId(mngBean);
+		dao.createEmployeeInfo(bean);
+		return VIEW_HOME_PAGE;
 	}
 
 }

@@ -15,7 +15,7 @@ import lombok.Data;
 public class DepartmentInfoBean implements Serializable{
 	@Id
 	@Column(name="dept_id")
-	private int deptId;
+	private Integer deptId;
 	@Column(name="dept_name")
 	private String deptName;
 	

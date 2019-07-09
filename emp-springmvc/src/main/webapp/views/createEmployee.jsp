@@ -24,14 +24,15 @@
 </script>
 
 </head>
-<body >
-<div style="text-align: center;">
-	<h1>Employee Management Portal</h1>
-	<button data-toggle="collapse" data-target="#empInfo">Employee
+<body>
+	<div style="text-align: center;">
+		<h1>Employee Management Portal</h1>
+		<button data-toggle="collapse" data-target="#empInfo">Employee
 			Information</button>
-			</div><br>
+	</div>
+	<br>
 	<div style="background: lightgoldenrodyellow" class="container">
-		
+
 		<!--  <button data-toggle="collapse" data-target="#empOtherInfo">Employee
 			Other Information</button>  -->
 		<div id="empInfo" class="collapse">
@@ -100,12 +101,13 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<label for="Salary">SALARY</label> <input type="number"
+							<label for="Salary">SALARY</label> <input type="text"
 								class="form-control" name="salary" placeholder="SALARY">
 						</div>
 						<div class="col">
 							<label for="DeptId">DEPAETMENT ID</label> <input type="number"
-								class="form-control" name="departmentId" placeholder="DEPAETMENT ID">
+								class="form-control" name="departmentId"
+								placeholder="DEPAETMENT ID">
 						</div>
 					</div>
 					<div class="row">
@@ -115,7 +117,7 @@
 						</div>
 						<div class="col">
 							<label for="Manager">MANAGER ID</label> <input type="number"
-								class="form-control" name="managerId.id" placeholder="MANAGER ID">
+								class="form-control" name="mngId" placeholder="MANAGER ID">
 						</div>
 					</div>
 					<div class="row">
@@ -126,8 +128,7 @@
 								placeholder="JOINING DATE">
 						</div>
 						<div class="col-3">
-							<br>
-							<input type="button" data-toggle="collapse"
+							<br> <input type="button" data-toggle="collapse"
 								class="form-control btn btn-outline-success"
 								data-target="#empOtherInfo" value="Emplyee Other Info" />
 						</div>
@@ -138,7 +139,7 @@
 						</div>
 
 					</div>
-					
+
 					<div id="empOtherInfo" class="collapse">
 						<p class="h3" style="text-align: center;">EMPLOYEE OTHER
 							INFORMATION</p>
@@ -147,8 +148,8 @@
 						<div class="row">
 							<div class="col">
 								<label for="Id">ID</label> <input type="number"
-									class="form-control" name="employeeOtherInfoBean.id" id="otherId"
-									readonly="readonly">
+									class="form-control" name="employeeOtherInfoBean.id"
+									id="otherId" readonly="readonly">
 							</div>
 							<div class="col">
 								<label for="exampleInputemergenum">Emergency Contact
@@ -158,14 +159,16 @@
 							</div>
 							<div class="col">
 								<label for="exampleInputmotname">Mother Name</label> <input
-									type="text" class="form-control" id="mothername" name="employeeOtherInfoBean.motherName"
+									type="text" class="form-control" id="mothername"
+									name="employeeOtherInfoBean.motherName"
 									placeholder="Please Enter Mother Name">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
 								<label for="exampleInputPan">Pan Number</label> <input
-									type="text" class="form-control" name="employeeOtherInfoBean.pan"
+									type="text" class="form-control"
+									name="employeeOtherInfoBean.pan"
 									placeholder="Please Enter Pan Number">
 							</div>
 							<div class="col">
@@ -176,17 +179,18 @@
 							</div>
 							<div class="col">
 								<label for="exampleInputspouse">Spouse Name</label> <input
-									type="text" class="form-control" name="employeeOtherInfoBean.spouseName"
+									type="text" class="form-control"
+									name="employeeOtherInfoBean.spouseName"
 									placeholder="Please Enter Spouse Name">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
-								<label for="inputStatus">Marrital Status</label> <select
+								<label for="inputStatus">Marital Status</label> <select
 									name="employeeOtherInfoBean.isMarried" class="form-control">
 									<option selected>Married</option>
-									<option value="1">Married</option>
-									<option value="0">Unmarried</option>
+									<option value="true">Married</option>
+									<option value="false">Unmarried</option>
 
 								</select>
 							</div>
@@ -200,7 +204,8 @@
 							</div>
 							<div class="col">
 								<label for="exampleInputpassport">Passport Number</label> <input
-									type="text" class="form-control" name="employeeOtherInfoBean.passport"
+									type="text" class="form-control"
+									name="employeeOtherInfoBean.passport"
 									placeholder="Please Enter Passport Number">
 							</div>
 						</div>
@@ -228,7 +233,8 @@
 							</div>
 							<div class="col">
 								<label for="exampleInputaadhar">Aadhar Number</label> <input
-									type="text" class="form-control" name="employeeOtherInfoBean.adhaar"
+									type="text" class="form-control"
+									name="employeeOtherInfoBean.adhaar"
 									placeholder="Please Enter Aadhar Number">
 							</div>
 						</div>
@@ -237,21 +243,21 @@
 								<label for="inputphysicallych">Physically Challenged</label> <select
 									name="employeeOtherInfoBean.isChallenged" class="form-control">
 									<option selected>---Select One---</option>
-									<option value="yes">Yes</option>
-									<option value="no">No</option>
+									<option value="true">Yes</option>
+									<option value="false">No</option>
 								</select>
 							</div>
 							<div class="col-4">
 								<label for="exampleInputfather">Father Number</label> <input
-									type="text" class="form-control" name="employeeOtherInfoBean.fathername"
+									type="text" class="form-control"
+									name="employeeOtherInfoBean.fathername"
 									placeholder="Please Enter Father Number">
 							</div>
 
 							<div class="col-2">
-								<br>
-                                    <input type="button" data-toggle="collapse"
-								class="form-control btn btn-outline-success"
-								data-target="#empAddressInfo" value="Address Info" />
+								<br> <input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empAddressInfo" value="Address Info" />
 
 							</div>
 							<div class="col-2">
@@ -259,372 +265,436 @@
 								<button type="reset"
 									class="form-control btn btn-outline-secondary">reset</button>
 							</div>
+						</div>
+					</div>
+					<div id="empAddressInfo" class="collapse">
+						<p class="h3" style="text-align: center;">EMPLOYEE ADDRESS
+							INFORMATION</p>
+						<hr>
+						<p class="h5" style="text-align: center;">EMPLOYEE PERMANENT
+							ADDRESS</p>
+						<div class="row">
+							<div class="col">
+								<label for="Employee Id">ID</label> <input type="number"
+									class="form-control" placeholder="Enter ID" readonly="readonly">
 							</div>
+							<div class="col">
+								<label for="city">City</label> <input type="text"
+									class="form-control" name="addressInfoBeans[0].city"
+									placeholder="Enter City">
 							</div>
-                            <div id="empAddressInfo" class="collapse">
-                            <p class="h3" style="text-align: center;">EMPLOYEE ADDRESS INFORMATION</p>
-  <hr>
-  <p class="h5" style="text-align: center;">EMPLOYEE PERMANENT ADDRESS </p>
-                            <div class="row">
-      <div class="col">
-        <label for="Employee Id">ID</label>
-        <input type="number" class="form-control" placeholder="Enter ID" readonly="readonly">
-      </div>
-      <div class="col">
-        <label for="city">City</label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].city" placeholder="Enter City">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <label for="address type">Address Type</label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].addressPKBean.addressType" placeholder="Enter Address Type">
-      </div>
-      <div class="col">
-        <label for="state">State</label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].state" placeholder="Enter State">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <label for="address1">Address1 </label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].address1" placeholder="Enter Address 1">
-      </div>
-      <div class="col">
-        <label for="country">Country </label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].country" placeholder="Enter Country">
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col">
-       <label for="address2">Address 2 </label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].address2" placeholder="Enter Address 2">
-      </div>
-      <div class="col">
-        <label for="pin">Pincode</label>
-        <input type="number" class="form-control" name="addressInfoBeans[0].pincode" placeholder="Enter Pincode">
-      </div>
-    </div>
-   
-    <div class="row">
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="address type">Address Type</label> <input
+									type="text" class="form-control"
+									name="addressInfoBeans[0].addressPKBean.addressType"
+									placeholder="Enter Address Type">
+							</div>
+							<div class="col">
+								<label for="state">State</label> <input type="text"
+									class="form-control" name="addressInfoBeans[0].state"
+									placeholder="Enter State">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="address1">Address1 </label> <input type="text"
+									class="form-control" name="addressInfoBeans[0].address1"
+									placeholder="Enter Address 1">
+							</div>
+							<div class="col">
+								<label for="country">Country </label> <input type="text"
+									class="form-control" name="addressInfoBeans[0].country"
+									placeholder="Enter Country">
+							</div>
+						</div>
 
-      <div class="col-6">
-        <label for="landmark">Landmark</label>
-        <input type="text" class="form-control" name="addressInfoBeans[0].landmark" placeholder="Enter Landmark">
-      </div>
-      <div class="col-2">
-        <br>
-        <!-- <button type="submit" class="form-control btn btn-outline-success" > Submit</button> -->
-        <input type="button" data-toggle="collapse"
-        class="form-control btn btn-outline-success"
-        data-target="#empTempararyAddressInfo" value="Temparary Address" />
-        
-      </div>
-      <div class="col-2">
-        <br>
-        <!-- <button type="submit" class="form-control btn btn-outline-success" > Submit</button> -->
-        <input type="button" data-toggle="collapse"
-        class="form-control btn btn-outline-success"
-        data-target="#empEducationInfo" value="Education Info" />
-        
-      </div>
-      <div class="col-2">
-        <br>
-        <button type="reset" class="form-control btn btn-outline-secondary">reset</button>
-      </div>
+						<div class="row">
+							<div class="col">
+								<label for="address2">Address 2 </label> <input type="text"
+									class="form-control" name="addressInfoBeans[0].address2"
+									placeholder="Enter Address 2">
+							</div>
+							<div class="col">
+								<label for="pin">Pincode</label> <input type="number"
+									class="form-control" name="addressInfoBeans[0].pincode"
+									placeholder="Enter Pincode">
+							</div>
+						</div>
 
-    </div>
-    </div>
-    
-    <hr>
-    <div id="empTempararyAddressInfo" class="collapse">
-    <p class="h5" style="text-align: center;">EMPLOYEE TEMPARARY ADDRESS </p>
-                              <div class="row">
-        <div class="col">
-          <label for="Employee Id">ID</label>
-          <input type="number" class="form-control" id="id" placeholder="Enter ID" readonly="readonly">
-        </div>
-        <div class="col">
-        <label for="city">City</label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].city" placeholder="Enter City">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <label for="address type">Address Type</label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].addressPKBean.addressType" placeholder="Enter Address Type">
-      </div>
-      <div class="col">
-        <label for="state">State</label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].state" placeholder="Enter State">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <label for="address1">Address1 </label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].address1" placeholder="Enter Address 1">
-      </div>
-      <div class="col">
-        <label for="country">Country </label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].country" placeholder="Enter Country">
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col">
-       <label for="address2">Address 2 </label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].address2" placeholder="Enter Address 2">
-      </div>
-      <div class="col">
-        <label for="pin">Pincode</label>
-        <input type="number" class="form-control" name="addressInfoBeans[1].pincode" placeholder="Enter Pincode">
-      </div>
-    </div>
-   
-    <div class="row">
+						<div class="row">
 
-      <div class="col-6">
-        <label for="landmark">Landmark</label>
-        <input type="text" class="form-control" name="addressInfoBeans[1].landmark" placeholder="Enter Landmark">
-      </div>
-        <div class="col-3">
-          <br>
-          <!-- <button type="submit" class="form-control btn btn-outline-success" > Submit</button> -->
-          <input type="button" data-toggle="collapse"
-        class="form-control btn btn-outline-success"
-        data-target="#empEducationInfo" value="Education Info" />
-          
-        </div>
-        <div class="col-3">
-          <br>
-          <button type="reset" class="form-control btn btn-outline-secondary">reset</button>
-        </div>
-  
-      </div>
-      </div>
-      
-      <hr>
-      <div id="empEducationInfo" class="collapse">
-    <p class="h3" style="text-align: center;">EMPLOYEE EDUCATION INFORMATION</p>
-    
-    <div class="row">
-            <div class="col">
-                    <label for="Education">Education Type</label>
-                    <input type="text" name="educationInfoBeans[0].educationPKBean.educationType" placeholder="Enter Education Type" class="form-control" autofocus>
-            </div>
-            <div class="col">
-                    <label for="degree" class="col-sm-3 control-label">Degree Type </label>
-                    <input type="text" name="educationInfoBeans[0].degreeType" placeholder="Enter Degree Type" class="form-control" name= "degree">
-            </div>
-        </div>    
-        <div class="row">
-                <div class="col">
-                        <label for="branch" class="col-sm-3 control-label">Branch</label>
-                        <input type="text" name="educationInfoBeans[0].branch" placeholder="Enter Branch" class="form-control">
-                </div>
-                <div class="col">
-                        <label for="college" class="col-sm-3 control-label">College Name</label>
-                        <input type="text" name="educationInfoBeans[0].collegeName" placeholder="Enter College Name" class="form-control">
-                </div>
-            </div>    
-            <div class="row">
-                    <div class="col">
-                            <label for="yop" >Year of Passing</label>
-                            
-                                <input type="date" name="educationInfoBeans[0].yop" class="form-control">
-                            
-                    </div>
-                    <div class="col">
-                            <label for="university" class="col-sm-3 control-label">University</label>
-                           
-                                <input type="text" name="educationInfoBeans[0].university" placeholder="Enter University" class="form-control">
-                            
-                    </div>
-                </div>
-                <div class="row">
-                        <div class="col">
-                               
-                        <label for="percentage" class="col-sm-3 control-label">Percentage </label>
-                                        
-                     <input type="number" name="educationInfoBeans[0].percentage" placeholder="Enter Percentage" class="form-control">                            
-                                   
-                        </div>
-                        <div class="col">
-                                <label for="location" class="col-sm-3 control-label">Location</label>
-                                       
-                                <input type="text" name="educationInfoBeans[0].location" placeholder="Enter College Location" class="form-control">
-                        </div>
-                    </div>        
-       
-  
-    
-    <div class="row">
-        <div class="col">
-            <br>
-            <!-- <button type="submit" class="form-control btn btn-outline-success"> Submit</button> -->
-            <input type="button" data-toggle="collapse"
-        class="form-control btn btn-outline-success"
-        data-target="#empEducationInfo2" value="Education Info" />
-        </div>
+							<div class="col-6">
+								<label for="landmark">Landmark</label> <input type="text"
+									class="form-control" name="addressInfoBeans[0].landmark"
+									placeholder="Enter Landmark">
+							</div>
+							<div class="col-2">
+								<br>
+								<!-- <button type="submit" class="form-control btn btn-outline-success" > Submit</button> -->
+								<input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empTempararyAddressInfo"
+									value="Temparary Address" />
 
-        <div class="col">
-            <br>
-            <button type="reset" class="form-control btn btn-outline-secondary">reset</button>
-        </div>
+							</div>
+							<div class="col-2">
+								<br>
+								<!-- <button type="submit" class="form-control btn btn-outline-success" > Submit</button> -->
+								<input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empEducationInfo" value="Education Info" />
 
-    </div>
-      </div>
+							</div>
+							<div class="col-2">
+								<br>
+								<button type="reset"
+									class="form-control btn btn-outline-secondary">reset</button>
+							</div>
 
-      <hr>
-      <div id="empEducationInfo2" class="collapse">
-    <p class="h3" style="text-align: center;">EMPLOYEE EDUCATION INFORMATION</p>
-    <div class="row">
-            <div class="col">
-                    <label for="Education">Education Type</label>
-                    <input type="text" name="educationInfoBeans[1].educationPKBean.educationType" placeholder="Enter Education Type" class="form-control" autofocus>
-            </div>
-            <div class="col">
-                    <label for="degree" class="col-sm-3 control-label">Degree Type </label>
-                    <input type="text" name="educationInfoBeans[1].degreeType" placeholder="Enter Degree Type" class="form-control" name= "degree">
-            </div>
-        </div>    
-        <div class="row">
-                <div class="col">
-                        <label for="branch" class="col-sm-3 control-label">Branch</label>
-                        <input type="text" name="educationInfoBeans[1].branch" placeholder="Enter Branch" class="form-control">
-                </div>
-                <div class="col">
-                        <label for="college" class="col-sm-3 control-label">College Name</label>
-                        <input type="text" name="educationInfoBeans[1].collegeName" placeholder="Enter College Name" class="form-control">
-                </div>
-            </div>    
-            <div class="row">
-                    <div class="col">
-                            <label for="yop" >Year of Passing</label>
-                            
-                                <input type="date" name="educationInfoBeans[1].yop" class="form-control">
-                            
-                    </div>
-                    <div class="col">
-                            <label for="university" class="col-sm-3 control-label">University</label>
-                           
-                                <input type="text" name="educationInfoBeans[1].university" placeholder="Enter University" class="form-control">
-                            
-                    </div>
-                </div>
-                <div class="row">
-                        <div class="col">
-                               
-                        <label for="percentage" class="col-sm-3 control-label">Percentage </label>
-                                        
-                     <input type="number" name="educationInfoBeans[1].percentage" placeholder="Enter Percentage" class="form-control">                            
-                                   
-                        </div>
-                        <div class="col">
-                                <label for="location" class="col-sm-3 control-label">Location</label>
-                                       
-                                <input type="text" name="educationInfoBeans[1].location" placeholder="Enter College Location" class="form-control">
-                        </div>
-                    </div>        
-       
-                    <div class="row">
-                            <div class="col">
-                                <br>
-                                <!-- <button type="submit" class="form-control btn btn-outline-success"> Submit</button> -->
-                                <input type="button" data-toggle="collapse"
-                            class="form-control btn btn-outline-success"
-                            data-target="#empExperienceInfo" value="Experience Info" />
-                            </div>
-                    
-                            <div class="col">
-                                <br>
-                                <button type="reset" class="form-control btn btn-outline-secondary">reset</button>
-                            </div>
-                    
-                        </div>   
-    </div>   
-   
-            <hr>
-      <div id="empExperienceInfo" class="collapse">
-            <h4 class="text-center">EMPLOYEE EXPERIENCE DETAILS</h4>
-            <div class="row">
-                    <div class="col">
-                            <label for="name">Company Name</label>
-                            <input type="text" id="companyname" name="experienceInfoBeans[0].expPKBean.companyName" placeholder="Enter Company Name" class="form-control">
-                    </div>
-                    <div class="col">
-                            <label for="designation">Designation</label>
-                            <input type="text" name="experienceInfoBeans[0].designation" placeholder="Enter Designation" class="form-control">
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="col">
-                        <label for="Joining Date">Joining Date</label>
-                        <input type="date" class="form-control" name="experienceInfoBeans[0].joiningDate" placeholder="Enter Joining date">
-                    </div>
-    
-                    <div class="col">
-                            <label for="Leaving Date">Leaving Date</label>
-                            <input type="date" class="form-control" name="experienceInfoBeans[0].leavingDate" placeholder="Enter Leaving date">
-                    </div>
-                </div>                  
-                  
-                <div class="row">
-                    <div class="col">
-                        <br>
-                        <!-- <button type="submit" class="form-control btn btn-outline-success"> Submit</button> -->
-                        <input type="button" data-toggle="collapse"
-                        class="form-control btn btn-outline-success"
-                        data-target="#empExperienceInfo1" value="Experience Info" />
-                    </div>
+						</div>
+					</div>
 
-                    <div class="col">
-                        <br>
-                        <button type="reset" class="form-control btn btn-outline-secondary">reset</button>
-                    </div>
+					<hr>
+					<div id="empTempararyAddressInfo" class="collapse">
+						<p class="h5" style="text-align: center;">EMPLOYEE TEMPARARY
+							ADDRESS</p>
+						<div class="row">
+							<div class="col">
+								<label for="Employee Id">ID</label> <input type="number"
+									class="form-control" id="id" placeholder="Enter ID"
+									readonly="readonly">
+							</div>
+							<div class="col">
+								<label for="city">City</label> <input type="text"
+									class="form-control" name="addressInfoBeans[1].city"
+									placeholder="Enter City">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="address type">Address Type</label> <input
+									type="text" class="form-control"
+									name="addressInfoBeans[1].addressPKBean.addressType"
+									placeholder="Enter Address Type">
+							</div>
+							<div class="col">
+								<label for="state">State</label> <input type="text"
+									class="form-control" name="addressInfoBeans[1].state"
+									placeholder="Enter State">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="address1">Address1 </label> <input type="text"
+									class="form-control" name="addressInfoBeans[1].address1"
+									placeholder="Enter Address 1">
+							</div>
+							<div class="col">
+								<label for="country">Country </label> <input type="text"
+									class="form-control" name="addressInfoBeans[1].country"
+									placeholder="Enter Country">
+							</div>
+						</div>
 
-                </div>
-      </div>  
-      <hr>
-      <div id="empExperienceInfo1" class="collapse">
-            <h4 class="text-center">EMPLOYEE EXPERIENCE DETAILS</h4>
-            <div class="row">
-                <div class="col">
-                        <label for="name">Company Name</label>
-                        <input type="text" id="companyname" name="experienceInfoBeans[1].expPKBean.companyName" placeholder="Enter Company Name" class="form-control">
-                </div>
-                <div class="col">
-                        <label for="designation">Designation</label>
-                        <input type="text" name="experienceInfoBeans[1].designation" placeholder="Enter Designation" class="form-control">
-                </div>
-            </div>
-                <div class="row">
-                    <div class="col">
-                    <label for="Joining Date">JOINING DATE</label>
-                    <input type="date" class="form-control" name="experienceInfoBeans[1].joiningDate" placeholder="Enter Joining date">
-                </div>
+						<div class="row">
+							<div class="col">
+								<label for="address2">Address 2 </label> <input type="text"
+									class="form-control" name="addressInfoBeans[1].address2"
+									placeholder="Enter Address 2">
+							</div>
+							<div class="col">
+								<label for="pin">Pincode</label> <input type="number"
+									class="form-control" name="addressInfoBeans[1].pincode"
+									placeholder="Enter Pincode">
+							</div>
+						</div>
 
-                <div class="col">
-                        <label for="Leaving Date">Leaving Date</label>
-                        <input type="date" class="form-control" name="experienceInfoBeans[1].leavingDate" placeholder="Enter Leaving date">
-                </div>
-            </div>
-               
-                <div class="row">
-                    <div class="col">
-                        <br>
-                        <button type="submit" class="form-control btn btn-outline-success"> Submit</button>
-                    </div>
+						<div class="row">
 
-                    <div class="col">
-                        <br>
-                        <button type="reset" class="form-control btn btn-outline-secondary">reset</button>
-                    </div>
+							<div class="col-6">
+								<label for="landmark">Landmark</label> <input type="text"
+									class="form-control" name="addressInfoBeans[1].landmark"
+									placeholder="Enter Landmark">
+							</div>
+							<div class="col-3">
+								<br>
+								<!-- <button type="submit" class="form-control btn btn-outline-success" > Submit</button> -->
+								<input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empEducationInfo" value="Education Info" />
 
-                </div>
-      </div>   
-    			</form>
+							</div>
+							<div class="col-3">
+								<br>
+								<button type="reset"
+									class="form-control btn btn-outline-secondary">reset</button>
+							</div>
+
+						</div>
+					</div>
+
+					<hr>
+					<div id="empEducationInfo" class="collapse">
+						<p class="h3" style="text-align: center;">EMPLOYEE EDUCATION
+							INFORMATION</p>
+
+						<div class="row">
+							<div class="col">
+								<label for="Education">Education Type</label> <input type="text"
+									name="educationInfoBeans[0].educationPKBean.educationType"
+									placeholder="Enter Education Type" class="form-control"
+									autofocus>
+							</div>
+							<div class="col">
+								<label for="degree" class="col-sm-3 control-label">Degree
+									Type </label> <input type="text"
+									name="educationInfoBeans[0].degreeType"
+									placeholder="Enter Degree Type" class="form-control"
+									name="degree">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="branch" class="col-sm-3 control-label">Branch</label>
+								<input type="text" name="educationInfoBeans[0].branch"
+									placeholder="Enter Branch" class="form-control">
+							</div>
+							<div class="col">
+								<label for="college" class="col-sm-3 control-label">College
+									Name</label> <input type="text"
+									name="educationInfoBeans[0].collegeName"
+									placeholder="Enter College Name" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="yop">Year of Passing</label> <input type="date"
+									name="educationInfoBeans[0].yop" class="form-control">
+
+							</div>
+							<div class="col">
+								<label for="university" class="col-sm-3 control-label">University</label>
+
+								<input type="text" name="educationInfoBeans[0].university"
+									placeholder="Enter University" class="form-control">
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+
+								<label for="percentage" class="col-sm-3 control-label">Percentage
+								</label> <input type="text" name="educationInfoBeans[0].percentage"
+									placeholder="Enter Percentage" class="form-control">
+
+							</div>
+							<div class="col">
+								<label for="location" class="col-sm-3 control-label">Location</label>
+
+								<input type="text" name="educationInfoBeans[0].location"
+									placeholder="Enter College Location" class="form-control">
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col">
+								<br>
+								<!-- <button type="submit" class="form-control btn btn-outline-success"> Submit</button> -->
+								<input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empEducationInfo2" value="Education Info" />
+							</div>
+
+							<div class="col">
+								<br>
+								<button type="reset"
+									class="form-control btn btn-outline-secondary">reset</button>
+							</div>
+
+						</div>
+					</div>
+
+					<hr>
+					<div id="empEducationInfo2" class="collapse">
+						<p class="h3" style="text-align: center;">EMPLOYEE EDUCATION
+							INFORMATION</p>
+						<div class="row">
+							<div class="col">
+								<label for="Education">Education Type</label> <input type="text"
+									name="educationInfoBeans[1].educationPKBean.educationType"
+									placeholder="Enter Education Type" class="form-control"
+									autofocus>
+							</div>
+							<div class="col">
+								<label for="degree" class="col-sm-3 control-label">Degree
+									Type </label> <input type="text"
+									name="educationInfoBeans[1].degreeType"
+									placeholder="Enter Degree Type" class="form-control"
+									name="degree">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="branch" class="col-sm-3 control-label">Branch</label>
+								<input type="text" name="educationInfoBeans[1].branch"
+									placeholder="Enter Branch" class="form-control">
+							</div>
+							<div class="col">
+								<label for="college" class="col-sm-3 control-label">College
+									Name</label> <input type="text"
+									name="educationInfoBeans[1].collegeName"
+									placeholder="Enter College Name" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="yop">Year of Passing</label> <input type="date"
+									name="educationInfoBeans[1].yop" class="form-control">
+
+							</div>
+							<div class="col">
+								<label for="university" class="col-sm-3 control-label">University</label>
+
+								<input type="text" name="educationInfoBeans[1].university"
+									placeholder="Enter University" class="form-control">
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+
+								<label for="percentage" class="col-sm-3 control-label">Percentage
+								</label> <input type="text" name="educationInfoBeans[1].percentage"
+									placeholder="Enter Percentage" class="form-control">
+
+							</div>
+							<div class="col">
+								<label for="location" class="col-sm-3 control-label">Location</label>
+
+								<input type="text" name="educationInfoBeans[1].location"
+									placeholder="Enter College Location" class="form-control">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col">
+								<br>
+								<!-- <button type="submit" class="form-control btn btn-outline-success"> Submit</button> -->
+								<input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empExperienceInfo" value="Experience Info" />
+							</div>
+
+							<div class="col">
+								<br>
+								<button type="reset"
+									class="form-control btn btn-outline-secondary">reset</button>
+							</div>
+
+						</div>
+					</div>
+
+					<hr>
+					<div id="empExperienceInfo" class="collapse">
+						<h4 class="text-center">EMPLOYEE EXPERIENCE DETAILS</h4>
+						<div class="row">
+							<div class="col">
+								<label for="name">Company Name</label> <input type="text"
+									id="companyname"
+									name="experienceInfoBeans[0].expPKBean.companyName"
+									placeholder="Enter Company Name" class="form-control">
+							</div>
+							<div class="col">
+								<label for="designation">Designation</label> <input type="text"
+									name="experienceInfoBeans[0].designation"
+									placeholder="Enter Designation" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="Joining Date">Joining Date</label> <input
+									type="date" class="form-control"
+									name="experienceInfoBeans[0].joiningDate"
+									placeholder="Enter Joining date">
+							</div>
+
+							<div class="col">
+								<label for="Leaving Date">Leaving Date</label> <input
+									type="date" class="form-control"
+									name="experienceInfoBeans[0].leavingDate"
+									placeholder="Enter Leaving date">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col">
+								<br>
+								<!-- <button type="submit" class="form-control btn btn-outline-success"> Submit</button> -->
+								<input type="button" data-toggle="collapse"
+									class="form-control btn btn-outline-success"
+									data-target="#empExperienceInfo1" value="Experience Info" />
+							</div>
+
+							<div class="col">
+								<br>
+								<button type="reset"
+									class="form-control btn btn-outline-secondary">reset</button>
+							</div>
+
+						</div>
+					</div>
+					<hr>
+					<div id="empExperienceInfo1" class="collapse">
+						<h4 class="text-center">EMPLOYEE EXPERIENCE DETAILS</h4>
+						<div class="row">
+							<div class="col">
+								<label for="name">Company Name</label> <input type="text"
+									id="companyname"
+									name="experienceInfoBeans[1].expPKBean.companyName"
+									placeholder="Enter Company Name" class="form-control">
+							</div>
+							<div class="col">
+								<label for="designation">Designation</label> <input type="text"
+									name="experienceInfoBeans[1].designation"
+									placeholder="Enter Designation" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for="Joining Date">JOINING DATE</label> <input
+									type="date" class="form-control"
+									name="experienceInfoBeans[1].joiningDate"
+									placeholder="Enter Joining date">
+							</div>
+
+							<div class="col">
+								<label for="Leaving Date">Leaving Date</label> <input
+									type="date" class="form-control"
+									name="experienceInfoBeans[1].leavingDate"
+									placeholder="Enter Leaving date">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col">
+								<br>
+								<button type="submit"
+									class="form-control btn btn-outline-success">Submit</button>
+							</div>
+
+							<div class="col">
+								<br>
+								<button type="reset"
+									class="form-control btn btn-outline-secondary">reset</button>
+							</div>
+
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

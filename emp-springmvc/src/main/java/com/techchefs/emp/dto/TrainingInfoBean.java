@@ -20,7 +20,7 @@ import lombok.Data;
 public class TrainingInfoBean implements Serializable{
 	@Id
 	@Column(name="course_id")
-	private int courseId;
+	private Integer courseId;
 	@Column(name="course_name")
 	private String courseName;
 	private String duration;

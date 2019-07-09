@@ -33,7 +33,7 @@
 		<h6 class="ml-auto">Welcome ${bean.empName }</h6>
 		<a class="ml-auto" href="./logout">Logout</a>
 	</nav>
-	
+	<a class="ml-auto" href="../employee/updateEmployee">Update Profile</a>
 	<div class="container">
 	<br> ID : ${bean.id}
 	<br> Name ====> ${bean.empName} 
@@ -47,7 +47,7 @@
 	<br> Designation ====>${bean.designation }
 	<br> DOB ====>${bean.dob }
 	<br> DEPT_NO ====>${bean.departmentId } 
-	<br> MNGR ID ====>${bean.managerId }
+	<br> MNGR ID ====>${bean.managerId.id }
 	</div>
 </body>
 </html>

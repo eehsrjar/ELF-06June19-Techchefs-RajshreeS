@@ -25,7 +25,7 @@ public class EmployeeEducationalInfoBean implements Serializable{
 	private String collegeName;
 	private String university;
 	private Date yop;
-	private double percentage;	 
+	private Double percentage;	 
 	private String location;
 	
 	public EmployeeEducationalInfoBean() {

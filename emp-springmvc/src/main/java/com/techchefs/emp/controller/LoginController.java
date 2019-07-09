@@ -34,6 +34,8 @@ import com.techchefs.emp.dto.EmployeeExperienceInfoBean;
 import com.techchefs.emp.dto.EmployeeInfoBean;
 import com.techchefs.emp.dto.EmployeeOtherInfoBean;
 
+import lombok.extern.java.Log;
+@Log
 @Controller
 @RequestMapping("/login")
 @PropertySource(PROP_FILENAME)
@@ -55,9 +57,10 @@ public class LoginController {
 	}
 
 	@PostMapping("/authenticate")
-	public String submitLoginForm(int id, String password, HttpServletRequest req, @Value("${loginFail}") String msg) {
+	public String submitLoginForm(Integer id, String password, HttpServletRequest req, @Value("${loginFail}") String msg) {
 		
 		EmployeeInfoBean bean = dao.getEmployeeInfo(id);
+		log.info("Bean Object:"+bean);
 		if (bean != null && bean.getPassword().equals(password)) {
 			HttpSession session = req.getSession(true);
 			session.setAttribute("bean", bean);
@@ -73,7 +76,10 @@ public class LoginController {
 	}
 	
 	@PostMapping("/create")
-	public String createEmployee(EmployeeInfoBean bean,ModelMap map) {
+	public String createEmployee(EmployeeInfoBean bean,int mngId,ModelMap map) {
+		
+		EmployeeInfoBean magBean=dao.getEmployeeInfo(mngId);
+		bean.setManagerId(magBean);
 		for(EmployeeAddressInfoBean addressBean: bean.getAddressInfoBeans()) {
 			addressBean.getAddressPKBean().setEmpInfoBean(bean);
 		}

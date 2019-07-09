@@ -40,7 +40,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 				bean.setGender(rs.getString("gender"));
 				bean.setSalary(rs.getDouble("salary"));
 				bean.setJoiningDate(rs.getDate("joining_date"));
-				bean.setAccountNumber(rs.getInt("account_number"));
+				//bean.setAccountNumber(rs.getInt("account_number"));
 				bean.setEmail(rs.getString("email"));
 				bean.setDesignation(rs.getString("designation"));
 				bean.setDob(rs.getDate("dob"));
@@ -101,7 +101,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 				bean.setGender(rs.getString("gender"));
 				bean.setSalary(rs.getDouble("salary"));
 				bean.setJoiningDate(rs.getDate("joining_date"));
-				bean.setAccountNumber(rs.getInt("account_number"));
+				//bean.setAccountNumber(rs.getInt("account_number"));
 				bean.setEmail(rs.getString("email"));
 				bean.setDesignation(rs.getString("designation"));
 				bean.setDob(rs.getDate("dob"));
