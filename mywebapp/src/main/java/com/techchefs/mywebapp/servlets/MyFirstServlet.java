@@ -9,9 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lombok.extern.java.Log;
+@Log
 public class MyFirstServlet extends HttpServlet{
+	public MyFirstServlet(){log.info("Inside MyFirstServlet");}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		log.info("HTTP Method :"+req.getMethod());
+		log.info("Protocol : "+req.getProtocol());
+		log.info("Request URL :"+req.getRequestURL());
+		
+		
 		String currentDate=new Date().toString();
 		
 		//Get Query String Information
@@ -36,7 +44,7 @@ public class MyFirstServlet extends HttpServlet{
 				"</html>";
 		
 		//send the Above HTML response to browser
-		resp.setContentType("html/text");
+		resp.setContentType("text/html");
 		//resp.setHeader("Refresh", "1");
 		PrintWriter out=resp.getWriter();
 		out.print(htmlResponse);
