@@ -1,57 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table Structure</title>
 </head>
-<body>
-    <table> <caption>A complex table</caption> 
-        <thead>
-             <tr> 
-                 <th colspan="3">Invoice #123456789</th> 
-                 <th>14 January 2025 </tr>
-                     <tr> <td colspan="2"> <strong>Pay to:</strong><br> Acme Billing Co.<br> 123 Main St.<br> Cityville, NA 12345 </td>
-                         <td colspan="2"> <strong>Customer:</strong><br> John Smith<br> 321 Willow Way<br> Southeast Northwestershire, MA 54321 </td> 
-                        </tr>
-        </thead> 
-                     <tbody> 
-                         <tr>
-                              <th>Name / Description</th> 
-                              <th>Qty.</th> 
-                              <th>@</th> 
-                              <th>Cost</th> 
-                            </tr>
-                             <tr> 
-                                 <td>Paperclips</td>
-                                  <td>1000</td> 
-                                  <td>0.01</td> 
-                                  <td>10.00</td> 
-                                </tr> 
-                                <tr> 
-                                    <td>Staples (box)</td>
-                                    <td>100</td> 
-                                    <td>1.00</td> 
-                                    <td>100.00</td>
-                                 </tr> 
-                                </tbody> 
-                                <tfoot>
-                                     <tr> 
-                                         <th colspan="3">Subtotal</th> 
-                                         <td> 110.00</td> 
-                                        </tr>
-                                         <tr> 
-                                             <th colspan="2">Tax</th> 
-                                             <td> 8% </td> <td>8.80</td> 
-                                            </tr> 
-                                            <tr> 
-                                                <th colspan="3">Grand Total</th> 
-                                                <td>$ 118.80</td> 
-                                            </tr> 
-                                        </tfoot> 
-                                    </table>
 
+<body>
+
+    <TABLE border=1>
+        <CAPTION><EM>A test table with merged cells</EM></CAPTION>
+        <TR>
+            <TH rowspan="2"></TH>
+            <TH colspan="2">Average</TH>
+            <TH rowspan="2">Red<BR>eyes</TH>
+        </TR>
+        <TR>
+            <TH>height</TH>
+            <TH>weight</TH>
+        <TR>
+            <TH>Males
+            <TD>1.9
+            <TD>0.003
+            <TD>40%
+        <TR>
+            <TH>Females
+            <TD>1.7
+            <TD>0.002
+            <TD>43%
+    </TABLE>
+    <br>
+    <br>
+    <TABLE border=1>
+        <TR>
+            <TH colspan="7">Time Table</TH>
+        </TR>
+        <TR>
+            <TH rowspan="6">Hours</TH>
+            <TH>Mon</TH>
+            <TH>Tue</TH>
+            <TH>Wed</TH>
+            <TH>Thu</TH>
+            <TH>Fri</TH>
+        </TR>
+        <TR>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Atrs</TD>
+        </TR>
+        <TR>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Atrs</TD>
+        </TR>
+        <TR>
+            <TH colspan="5">Lunch</TH>
+        </TR>
+        <TR>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Atrs</TD>
+        </TR>
+        <TR>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Science</TD>
+            <TD>Maths</TD>
+            <TD>Atrs</TD>
+        </TR>
+    </TABLE>
+    <br>
+    <br>
+    <TABLE border=1 cellpadding=3 cellspacing=2 height=250 width=350>
+        <TR>
+            <TH colspan="2">Home Team</TH>
+            <TH colspan="2">Away Team</TH>
+        </TR>
+
+        <TR>
+            <TD>Arsenal</TD>
+            <TD>2</TD>
+            <TD>Leeds</TD>
+            <TD>1</TD>
+        </TR>
+        <TR>
+            <TD>Derby</TD>
+            <TD>1</TD>
+            <TD>Everton</TD>
+            <TD>1</TD>
+        </TR>
+
+        <TR>
+            <TD>Liverpool</TD>
+            <TD>0</TD>
+            <TD>Sunderland</TD>
+            <TD>2</TD>
+
+        </TR>
+        <TR>
+            <TD>Newcastle</TD>
+            <TD>1</TD>
+            <TD>Man Utd</TD>
+            <TD>4</TD>
+
+        </TR>
+    </TABLE>
 
 </body>
+
 </html>
