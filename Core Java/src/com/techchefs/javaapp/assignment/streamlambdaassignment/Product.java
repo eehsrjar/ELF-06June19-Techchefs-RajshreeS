@@ -12,4 +12,9 @@ public class Product {
 		this.cost = cost;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", cost=" + cost + "]";
+	}
+ 
 }
