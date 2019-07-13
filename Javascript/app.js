@@ -223,3 +223,55 @@ let filteredValue=item.filter((value)=>{
     return value.price>10;
 });
 console.log(filteredValue);
+//closure
+function counter(){
+    var counter=0;
+    function getCount(){
+        counter++;
+        return counter;
+    }
+    return getCount;
+}
+var counte=counter();
+var value=counte();
+console.log(value);
+var val2=counte();
+console.log(val2);
+
+var Delightsalary=(function(){
+    var salary=20000;
+    function changeBy(amt){
+        salary +=amt;
+    }
+    return{
+        raise:function(){
+            changeBy(2000);
+        },
+        deduct:function(){
+            changeBy(-2000);
+        },
+        currentAmt:function(){
+            return salary;
+        }
+    }
+})();
+alert(Delightsalary.currentAmt());
+Delightsalary.raise();
+alert(Delightsalary.currentAmt());
+Delightsalary.deduct();
+alert(Delightsalary.currentAmt());
+var promise=new Promise((res,rej)=>{
+    const items=[{id:1,name:"anc"},{id:3,name:"xyz"},{id:4,name:"klhj"},{id:7,name:"poi"}];
+    if(items.length > 0){
+        res(items);
+    }else{
+        rej("rejected");
+    }
+});
+
+promise.then((data)=>{
+    console.log(data);
+}).catch((reason)=>{
+    console.log(reason);
+});
+//console.log(currentsal);

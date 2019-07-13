@@ -1,0 +1,19 @@
+.demo{
+    color: rgb(235, 31, 31);
+}
+#name{
+    color: blue;
+}
+#hobby{
+    font-size: 30px;
+}
+.button{
+    color: rgb(92, 205, 101);
+    border-radius: 10%;
+}
+.button1{
+    font-size:30px;
+}
+.blue{
+    font-family: 'Courier New', Courier, monospace;
+}
