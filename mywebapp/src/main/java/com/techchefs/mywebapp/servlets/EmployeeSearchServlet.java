@@ -3,7 +3,10 @@ package com.techchefs.mywebapp.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,10 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.techchefs.mywebapp.beans.EmployeeInfoBean;
 import com.techchefs.mywebapp.dao.EmployeeDAO;
 import com.techchefs.mywebapp.dao.EmployeeDAOFactory;
-@WebServlet("/search")
+@WebServlet(urlPatterns =  "/search",initParams = {
+		@WebInitParam(name="searchby",value="id")
+})
 public class EmployeeSearchServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		ServletContext ctx=getServletContext();
+		String appl=ctx.getInitParameter("Dynamic Web Application");
+		
+		ServletConfig config=getServletConfig();
+		String use=config.getInitParameter("searchby");
+		
 		String idVal=req.getParameter("id");
 		//Interact with DB and get the employee info
 		EmployeeDAO dao=EmployeeDAOFactory.getInstance();
@@ -49,6 +61,9 @@ public class EmployeeSearchServlet extends HttpServlet {
 			out.print("<br> DEPT_NO  ====>" + bean.getDepartmentId());
 			out.print("<br> MNGR ID  ====>" + bean.getManagerId());
 			
+			
+			out.print("<br><br>App Info :"+appl);
+			out.print("<br>Use : "+use);
 			out.print("</body>");
 			out.print("</html>");
 		}

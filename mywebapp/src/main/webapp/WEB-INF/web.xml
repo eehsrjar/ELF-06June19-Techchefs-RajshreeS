@@ -4,14 +4,46 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <context-param>
+  	<param-name>Dynamic Web Application</param-name>
+  	<param-value>mywebappp</param-value>
+  </context-param>
+  
   <servlet>
   	<servlet-name>myFirstServlet</servlet-name>
   	<servlet-class>com.techchefs.mywebapp.servlets.MyFirstServlet</servlet-class>
+  	<init-param>
+  		<param-name>date</param-name>
+  		<param-value>currentDate</param-value>
+  	</init-param>
   </servlet>
+  <servlet>
+  	<servlet-name>RedirectServlet</servlet-name>
+  	<display-name>RedirectServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.techchefs.mywebapp.servlets.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CookiServletCreation</servlet-name>
+  	<display-name>CookiServletCreation</display-name>
+  	<description></description>
+  	<servlet-class>com.techchefs.mywebapp.servlets.CookiServletCreation</servlet-class>
+  </servlet>
+  
   
   <servlet-mapping>
   <servlet-name>myFirstServlet</servlet-name>
   <url-pattern>/currentDate</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RedirectServlet</servlet-name>
+  	<url-pattern>/redirect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CookiServletCreation</servlet-name>
+  	<url-pattern>/cookies</url-pattern>
+  </servlet-mapping>
+ 
   
 </web-app>
