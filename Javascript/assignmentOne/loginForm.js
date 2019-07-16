@@ -13,15 +13,25 @@ function validateForm(){
     console.log(pass);
     var pass2=document.forms[0].pass.value;
     console.log(pass2);
-    /* if(pass.length < 6 || pass2.length < 6){
+    
+    if(pass.length < 6 || pass2.length < 6){
         document.getElementById('div2').innerHTML='<p>Passwords length should be more than 6</p>';
     }
     if(pass!==pass2){
         document.getElementById('div2').innerHTML='<p>Passwords are not same</p>';
-    } */
+    } 
     if(email.length > 6 && pass.length > 6 && pass2.length > 6 && pass===pass2){
         document.forms[0].myButton.disabled=false;
     }else {
         document.forms[0].myButton.disabled=true;
+    }
+}
+function show(){
+    var toggle=document.getElementById('password');
+
+    if(toggle.type === "password"){
+        toggle.type= "text";
+    }else{
+        toggle.type="password";
     }
 }

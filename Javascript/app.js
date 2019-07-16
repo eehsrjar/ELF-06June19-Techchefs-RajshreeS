@@ -255,11 +255,11 @@ var Delightsalary=(function(){
         }
     }
 })();
-alert(Delightsalary.currentAmt());
-Delightsalary.raise();
-alert(Delightsalary.currentAmt());
-Delightsalary.deduct();
-alert(Delightsalary.currentAmt());
+// (Delightsalary.currentAmt());
+// Delightsalary.raise();
+// alert(Delightsalary.currentAmt());
+// Delightsalary.deduct();
+// alert(Delightsalary.currentAmt());
 var promise=new Promise((res,rej)=>{
     const items=[{id:1,name:"anc"},{id:3,name:"xyz"},{id:4,name:"klhj"},{id:7,name:"poi"}];
     if(items.length > 0){
@@ -275,3 +275,44 @@ promise.then((data)=>{
     console.log(reason);
 });
 //console.log(currentsal);
+console.log(this);  //window
+console.log(window);//window
+var j=10;
+console.log(this.j);//10
+console.log(window.j);//10
+console.log(window === this);//true
+
+var person={
+    name:"abc",
+    age:23,
+     getName: function(){
+        console.log(this);
+        function innerFunction(){
+            console.log(this);
+        }
+        innerFunction();//window
+    }
+};
+person.getName();
+
+/* function checkThis(){
+    console.log(this);  //window
+    console.log(window);//window
+    var j=10;
+    console.log(this.j);//10
+    console.log(window.j);//10
+    console.log(window === this);//true
+}
+this.checkThis(); */
+var abc={
+    name:"abc",
+    age:23,
+     presentation: function(style,msg){
+         if(style=="formal"){
+            console.log(that.name+" "+msg);
+         }else{
+            console.log("Hi"+this.name+" "+msg);
+         }      
+    }
+};
+abc.presentation.call("formal","evening");
