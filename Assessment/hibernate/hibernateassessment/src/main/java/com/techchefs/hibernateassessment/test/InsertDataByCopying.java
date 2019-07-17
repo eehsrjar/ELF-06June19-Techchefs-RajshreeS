@@ -12,7 +12,7 @@ import lombok.extern.java.Log;
 public class InsertDataByCopying {
 	public static void main(String[] args) {
 		Session session=HibernateUtil.openSession();
-		Query query=session.createQuery("select id,firstName,lastName,city from CustomerBean");
+		Query query=session.createQuery("insert into TestBean(id,firstName,lastName,city) select id,firstName,lastName,city from CustomerBean");
 		int res=query.executeUpdate();
 		if(res>0) {
 			log.info("Data added");
