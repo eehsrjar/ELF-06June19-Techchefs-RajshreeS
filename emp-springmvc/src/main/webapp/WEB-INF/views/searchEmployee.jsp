@@ -16,18 +16,20 @@
 			</head>                                                                            
 			<body>                                                                             
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">                      
-			  <a class="navbar-brand" href="welcome">EMP</a>                               
+			  <a class="navbar-brand" href="./home">EMP</a>                               
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navrSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>                                       
 			  </button>                                                                           
 			                                                                                      
 			                                                                                      
-			    <form class="form-inline my-2 my-lg-0" action="./search" method="GET">                                  
+			    <!-- <form class="form-inline my-2 my-lg-0" action="./validate" method="GET"> -->
+			    <form class="form-inline my-2 my-lg-0" action="../validate1/search" method="GET">                                  
 			      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="id" aria-labelSearch>
+			      <!-- <input type="hidden" name="url" value="search"> -->
 			      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			    </form>                                                                           
 			
-			    <div><a class="ml-auto" href="./logout">Logout</a>   </div>                   
+			    <a class="ml-auto" href="./logout">Logout</a>                  
 			</nav> 
 			<%ArrayList<EmployeeInfoBean> arrId=(ArrayList<EmployeeInfoBean>)request.getAttribute("ArrayIds"); %>                                                                               
 			 <div class="card-body"> 
@@ -43,7 +45,8 @@
 			  <tbody>                              
 			<% for (EmployeeInfoBean employeeInfoBean : arrId) {%>
 			    <tr>                                
-			      <td><a href="./fetch?emp=<%=employeeInfoBean.getId() %>"><%=employeeInfoBean.getId() %></a></td>              
+			     <%--  <td><a href="./validate?url=fetch&emp=<%=employeeInfoBean.getId() %>"><%=employeeInfoBean.getId() %></a></td> --%>
+			      <td><a href="../validate1/fetch?emp=<%=employeeInfoBean.getId() %>"><%=employeeInfoBean.getId() %></a></td>              
 			      <td><%=employeeInfoBean.getEmpName() %></td>                    
 			    </tr>                               
 			<%} %>
