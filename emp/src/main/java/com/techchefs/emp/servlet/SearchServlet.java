@@ -18,16 +18,20 @@ import com.techchefs.emp.dao.EmployeeDAOHibernateImpl;
 
 import lombok.extern.java.Log;
 @WebServlet("/search")
-
+@Log
 public class SearchServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
 		EmployeeDAO dao = new EmployeeDAOHibernateImpl();
 		ArrayList<EmployeeInfoBean> arrId = dao.getEmployeeIds(id);
+		log.info("Hi");
+		for (EmployeeInfoBean employeeInfoBean : arrId) {
+			log.info(""+employeeInfoBean);
+		}
 		PrintWriter out=resp.getWriter();
 		//validate the session
-		HttpSession session=req.getSession(false);
+		HttpSession session=req.getSession();
 		if(session==null) {
 			//Invalid session. Generate login page with error Info
 			out.print("<h1><span style='color:red'>Invalid Session. Please Login</span></h1>");
@@ -59,13 +63,13 @@ public class SearchServlet extends HttpServlet{
 			out.print("</head>                                                                                ") ;
 			out.print("<body>                                                                                 ") ;
 			out.print("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">                            ") ;
-			out.print("  <a class=\"navbar-brand\" href=\"#\">EMP</a>                                             ") ;
+			out.print("  <a class=\"navbar-brand\" href=\"welcome\">EMP</a>                                             ") ;
 			out.print("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navrSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">");
 			out.print("    <span class=\"navbar-toggler-icon\"></span>                                          ") ;
 			out.print("  </button>                                                                            ") ;
 			out.print("                                                                                       ") ;
 			out.print("                                                                                       ") ;
-			out.print("    <form class=\"form-inline my-2 my-lg-0\" action=\"/emp/search\" method=\"GET\">                                            ") ;
+			out.print("    <form class=\"form-inline my-2 my-lg-0\" action=\"./search\" method=\"GET\">                                            ") ;
 			out.print("      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" name=\"id\" aria-labelSearch\">");
 			out.print("      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button") ;
 			out.print("    </form>                                                                            ") ;

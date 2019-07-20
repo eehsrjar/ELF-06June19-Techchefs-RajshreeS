@@ -19,15 +19,22 @@ import com.techchefs.emp.dao.EmployeeDAOHibernateImpl;
 public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//Check cookies are disabled
+		if(req.getCookies()==null) {
+			req.getRequestDispatcher("./html/cookiesDisabled.html").include(req, resp);
+			return;
+		}
+		
 		int id = Integer.parseInt(req.getParameter("id"));
 		String password = req.getParameter("password");
+		
 		EmployeeDAO dao = new EmployeeDAOHibernateImpl();
 		EmployeeInfoBean bean = dao.getEmployeeInfo(id);
 		RequestDispatcher dispatcher=null;
 		if (bean != null && bean.getPassword().equals(password)) {
 			//validate credentials
-			HttpSession session=req.getSession(true);
-			req.setAttribute("bean",bean);
+			HttpSession session=req.getSession();
+			session.setAttribute("bean",bean);
 			dispatcher = req.getRequestDispatcher("/welcome");
 			dispatcher.forward(req, resp);
 

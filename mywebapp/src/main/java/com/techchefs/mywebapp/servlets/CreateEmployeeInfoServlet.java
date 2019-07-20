@@ -25,8 +25,9 @@ public class CreateEmployeeInfoServlet extends HttpServlet{
 		bean.setEmpName(req.getParameter("name"));
 		bean.setAge(Integer.parseInt(req.getParameter("age")));
 		bean.setAccountNumber(Long.parseLong(req.getParameter("accountnumber")));
-		bean.setGender(req.getParameter("inputGender"));
+		bean.setGender(req.getParameter("gender"));
 		bean.setSalary(Double.parseDouble(req.getParameter("salary")));
+		bean.setPassword(req.getParameter("password"));
 		try {
 			bean.setDob(dateFormat.parse(req.getParameter("dob")));
 			bean.setJoiningDate(dateFormat.parse(req.getParameter("dateofjoin")));

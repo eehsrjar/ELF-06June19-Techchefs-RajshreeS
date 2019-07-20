@@ -17,6 +17,7 @@ public class EmployeeInfoBean implements Serializable{
 	private int id;
 	@Column(name="name")
 	private String empName;
+	private String password;
 	private int age;
 	private String gender;
 	private double salary;
