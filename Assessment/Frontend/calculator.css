@@ -1,0 +1,26 @@
+.cssstyle{
+    background-color: antiquewhite;
+    text-align: center;
+}
+.title{ 
+    margin-bottom: 10px; 
+    text-align:center; 
+    width: 210px; 
+    color:green; 
+  
+    } 
+
+    input[type="button"] 
+    { 
+    background-color:rgb(109, 103, 103); 
+    color: black; 
+    border: solid black 2px; 
+    width:100% 
+    } 
+
+    input[type="text"] 
+    { 
+    background-color:white; 
+    border: solid black 2px; 
+    width:100% 
+    } 
