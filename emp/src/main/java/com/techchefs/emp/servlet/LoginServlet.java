@@ -40,13 +40,14 @@ public class LoginServlet extends HttpServlet {
 
 		} else {
 			
-			resp.setContentType("text/html");
-			PrintWriter out=resp.getWriter();
-			
-			out.print("<br>");
-			dispatcher=req.getRequestDispatcher("./html/login.html");
-			dispatcher.include(req, resp);
-			out.print("<p style=\"text-align:center,color:red;\">Invalid Credentials</p>");
+//			resp.setContentType("text/html");
+//			PrintWriter out=resp.getWriter();
+//			
+//			out.print("<br>");
+//			dispatcher=req.getRequestDispatcher("./html/login.html");
+//			dispatcher.include(req, resp);
+//			out.print("<p style=\"text-align:center,color:red;\">Invalid Credentials</p>");
+			req.getRequestDispatcher("/loginFail?msg=Invalid Credentials").forward(req, resp);;
 		}
 	}
 }

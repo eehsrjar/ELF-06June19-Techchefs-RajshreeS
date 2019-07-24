@@ -25,10 +25,11 @@ public class EmployeeDataServlet extends HttpServlet {
 		HttpSession session = req.getSession(false);
 		if (session == null) {
 			// Invalid session. Generate login page with error Info
-			out.print("<h1><span style='color:red'>Invalid Session. Please Login</span></h1>");
-			out.print("<br><br>");
-			RequestDispatcher dispatcher = req.getRequestDispatcher("./html/login.html");
-			dispatcher.include(req, resp);
+//			out.print("<h1><span style='color:red'>Invalid Session. Please Login</span></h1>");
+//			out.print("<br><br>");
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("./html/login.html");
+//			dispatcher.include(req, resp);
+			req.getRequestDispatcher("/loginJSP?msg=Invalid Session. Please Login").forward(req, resp);
 		} else {
 			// valid session Generate proper response
 			String id = req.getParameter("emp");
