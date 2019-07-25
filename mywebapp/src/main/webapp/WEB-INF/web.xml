@@ -5,11 +5,16 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
+  
+  
   <context-param>
   	<param-name>Dynamic Web Application</param-name>
   	<param-value>mywebappp</param-value>
   </context-param>
-  
+  <servlet>
+    <servlet-name>FirstJsp</servlet-name>
+  	<jsp-file>/myFirstJSP.jsp</jsp-file>
+  </servlet>
   <servlet>
   	<servlet-name>myFirstServlet</servlet-name>
   	<servlet-class>com.techchefs.mywebapp.servlets.MyFirstServlet</servlet-class>
@@ -31,7 +36,10 @@
   	<servlet-class>com.techchefs.mywebapp.servlets.CookiServletCreation</servlet-class>
   </servlet>
   
-  
+  <servlet-mapping>
+  	<servlet-name>FirstJsp</servlet-name>
+  	<url-pattern>/currentJSP</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   <servlet-name>myFirstServlet</servlet-name>
   <url-pattern>/currentDate</url-pattern>

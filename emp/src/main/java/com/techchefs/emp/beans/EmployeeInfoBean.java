@@ -3,10 +3,14 @@ package com.techchefs.emp.beans;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
 
 import lombok.Data;
 @Data
@@ -33,5 +37,9 @@ public class EmployeeInfoBean implements Serializable{
 	private int departmentId;
 	@Column(name="mngr_id")
 	private int managerId;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	private EmployeeOtherInfoBean otherInfoBean;
 	
 }
