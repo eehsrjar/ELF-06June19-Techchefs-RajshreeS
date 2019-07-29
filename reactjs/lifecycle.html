@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="mydiv"></div>
+    
+    <script type="text/babel">
+   
+/* class Header extends React.Component {
+    constructor(props) {
+      super(props);
+      console.log("Color",props.favcol);
+      this.state = {favoritecolor: "red"};
+    }
+    static getDerivedStateFromProps(props, state) {
+        console.log("Color Inside static method",state.favoritecolor);
+      //return {favoritecolor: props.favcol };
+    }
+    render() {
+      return (
+        <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      );
+    }
+  } */
+  /* class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+  ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('mydiv')); */
+  class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(" Inside Constructor");
+    this.state = {favoritecolor: "red"};
+  }
+ /*  static getDerivedStateFromProps(props, state) {
+    console.log("Color Inside static method",state.favoritecolor);
+   // return {favoritecolor: props.favcol };
+  } */
+  shouldComponentUpdate() {
+    return false;//not allow to render ,by default true 
+  }
+  changeColor = () => {
+    console.log(" Inside Method");
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    console.log(" Inside Render");
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('mydiv'));
+    </script>
+</body>
+</html>
+
