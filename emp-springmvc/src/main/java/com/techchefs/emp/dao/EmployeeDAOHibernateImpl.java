@@ -2,30 +2,23 @@ package com.techchefs.emp.dao;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder.In;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.event.spi.SaveOrUpdateEvent;
 import org.hibernate.query.Query;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.techchefs.emp.dto.EmployeeInfoBean;
-import com.techchefs.emp.util.HibernateUtil;
 
 
 
-@Component
 public class EmployeeDAOHibernateImpl implements EmployeeDAO {
-
-	
+	@Autowired
+	SessionFactory factory;
 	public ArrayList<EmployeeInfoBean> getAllEmployeeInfo() {
-		Session session=HibernateUtil.openSession();
+		Session session=factory.openSession();
 		Query query=session.createQuery("from EmployeeInfoBean");
 		
 		return (ArrayList<EmployeeInfoBean>) query.list();
@@ -38,7 +31,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 
 	
 	public EmployeeInfoBean getEmployeeInfo(int id) {
-		Session session = HibernateUtil.openSession();
+		Session session = factory.openSession();
 		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);
 		session.close();
 		return bean;
@@ -47,7 +40,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	private boolean SaveOrUpdate(EmployeeInfoBean bean) {
 		Transaction transaction = null;
 		try {
-			Session session = HibernateUtil.openSession();
+			Session session = factory.openSession();
 			transaction = session.beginTransaction();
 			session.saveOrUpdate(bean);
 			transaction.commit();
@@ -71,7 +64,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	public boolean deleteEmployeeInfo(int id) {
 		Transaction transaction = null;
 		try {
-			Session session = HibernateUtil.openSession();
+			Session session = factory.openSession();
 			transaction = session.beginTransaction();
 			EmployeeInfoBean bean=session.get(EmployeeInfoBean.class, id);
 			session.delete(bean);
@@ -90,7 +83,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	}
 
 	public ArrayList<EmployeeInfoBean> getEmployeeIds(int eid) {
-		Session session=HibernateUtil.openSession();
+		Session session=factory.openSession();
 		Query query=session.createQuery("from EmployeeInfoBean b where str(b.id) LIKE '"+eid+"%'");
 		
 		return (ArrayList<EmployeeInfoBean>) query.list();

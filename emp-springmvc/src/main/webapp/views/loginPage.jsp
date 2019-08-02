@@ -36,7 +36,7 @@
  				<!-- <form action="./formSubmit3" method="POST"> -->
  				<!-- <form action="./formSubmit4" method="POST"> -->
  				<!-- <form action="./formSubmit5" method="POST"> -->
- 				<form action="./login" method="POST">
+ 				<form action="./authenticate" method="POST">
 				<div class="form-group">
 					<label for="Id">Employee Id</label> <input type="number" id="id"
 						name="id" placeholder="Enter Employee Id" class="form-control"

@@ -24,7 +24,7 @@
 
 
 		<!-- <form class="form-inline my-2 my-lg-0" action="./validate" method="GET"> -->
-		<form class="form-inline my-2 my-lg-0" action="./validate1/search" method="GET">
+		<form class="form-inline my-2 my-lg-0" action="../validator/validate/employee/search" method="GET">
 			<input class="form-control mr-sm-2" type="search"
 				placeholder="Search" name="id" aria-labelSearch>
 				<!-- <input type="hidden" name="url" value="search"> -->
