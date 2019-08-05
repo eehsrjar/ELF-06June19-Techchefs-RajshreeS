@@ -18,8 +18,12 @@
 <!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeInfoBean"/> -->
 <!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeOtherInfoBean"/> -->
 <!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeInfoNew"/> -->
-		<mapping class="com.techchefs.hibernateapp.onetoone.EmployeeInfoBean"/>
-		<mapping class="com.techchefs.hibernateapp.onetoone.EmployeeOtherInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeOtherInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeAddressInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeEducationalInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytoone.EmployeeExperienceInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.manytomany.TrainingInfoBean"/>
       <!--   <mapping resource="book.hbm.xml" /> -->
     </session-factory>
 </hibernate-configuration>

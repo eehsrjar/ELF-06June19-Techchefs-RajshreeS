@@ -20,6 +20,7 @@
 <!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeInfoNew"/> -->
 		<mapping class="com.techchefs.hibernateapp.onetoone.EmployeeInfoBean"/>
 		<mapping class="com.techchefs.hibernateapp.onetoone.EmployeeOtherInfoBean"/>
+		
       <!--   <mapping resource="book.hbm.xml" /> -->
     </session-factory>
 </hibernate-configuration>

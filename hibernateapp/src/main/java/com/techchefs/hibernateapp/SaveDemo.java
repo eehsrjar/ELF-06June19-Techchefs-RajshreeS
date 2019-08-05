@@ -43,7 +43,7 @@ public class SaveDemo {
 		empOtherInfoBean.setMarried(false);
 		empOtherInfoBean.setBloodGrp("A+");
 		empOtherInfoBean.setEmergencyContactName("Rama");
-		empOtherInfoBean.setEmergencyContactNumber(2589631470l);
+		empOtherInfoBean.setEmergencyContactNumber(258963147l);
 		empOtherInfoBean.setNationality("Indian");
 		empOtherInfoBean.setPassport("Hindu");
 		empOtherInfoBean.setFatherName("Rama");

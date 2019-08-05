@@ -12,14 +12,12 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
-<!--         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
-		
-<!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeInfoBean"/> -->
-<!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeOtherInfoBean"/> -->
-<!-- 		<mapping class="com.techchefs.hibernateapp.dto.EmployeeInfoNew"/> -->
-		<mapping class="com.techchefs.hibernateapp.onetoone.EmployeeInfoBean"/>
-		<mapping class="com.techchefs.hibernateapp.onetoone.EmployeeOtherInfoBean"/>
+		 <property name="hibernate.cache.use_second_level_cache">true</property>
+		  <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		  <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<mapping class="com.techchefs.hibernateapp.dto.EmployeeInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.dto.EmployeeOtherInfoBean"/>
+		<mapping class="com.techchefs.hibernateapp.cache.EmployeeInfoNew"/>
       <!--   <mapping resource="book.hbm.xml" /> -->
     </session-factory>
 </hibernate-configuration>
