@@ -17,6 +17,7 @@ import static com.techchefs.emp.commons.EMPConstants.DB_INTERACTION_TYPE;
 import static com.techchefs.emp.commons.EMPConstants.PROP_FILENAME;
 import static com.techchefs.emp.commons.EMPConstants.VIEW_LOGIN_PAGE;
 import static com.techchefs.emp.commons.EMPConstants.VIEW_HOME_PAGE;
+import static com.techchefs.emp.commons.EMPConstants.VIEW_CREATE_EMPLOYEE_PROFILE;
 import com.techchefs.emp.dao.EmployeeDAO;
 import com.techchefs.emp.dto.EmployeeInfoBean;
 
@@ -48,6 +49,10 @@ public class LoginController {
 			req.setAttribute("msg", msg);
 			return VIEW_LOGIN_PAGE;
 		}
+	}
+	@GetMapping("/createEmployee")
+	public String createEmployeePage() {
+		return VIEW_CREATE_EMPLOYEE_PROFILE;
 	}
 	
 	@GetMapping("/logout")

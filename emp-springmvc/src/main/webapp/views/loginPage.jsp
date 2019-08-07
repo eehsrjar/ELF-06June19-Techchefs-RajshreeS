@@ -54,7 +54,7 @@
 				</div>
 				<div class="form-group">
 					<button type="button" id="newAcBtn" class="btn btn-default">
-						<a href="createEmployee" >Create Account</a>
+						<a href="./createEmployee" >Create Account</a>
 					</button>
 					<button type="button" id="forgotpass" class="btn btn-default">Forgot
 						Password</button>
