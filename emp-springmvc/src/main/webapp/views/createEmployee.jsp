@@ -147,7 +147,7 @@
 						<div class="row">
 							<div class="col">
 								<label for="Id">ID</label> <input type="number"
-									class="form-control" name="otherInfoBean.id" id="otherId"
+									class="form-control" name="employeeOtherInfoBean.id" id="otherId"
 									readonly="readonly">
 							</div>
 							<div class="col">
@@ -268,7 +268,7 @@
                             <div class="row">
       <div class="col">
         <label for="Employee Id">ID</label>
-        <input type="number" class="form-control" id="id" placeholder="Enter ID" readonly="readonly">
+        <input type="number" class="form-control" placeholder="Enter ID" readonly="readonly">
       </div>
       <div class="col">
         <label for="city">City</label>
@@ -555,7 +555,7 @@
                     </div>
                     <div class="col">
                             <label for="designation">Designation</label>
-                            <input type="text" id="designation" name="experienceInfoBeans[0].designation" placeholder="Enter Designation" class="form-control">
+                            <input type="text" name="experienceInfoBeans[0].designation" placeholder="Enter Designation" class="form-control">
                     </div>
                 </div>
                     <div class="row">
@@ -596,7 +596,7 @@
                 </div>
                 <div class="col">
                         <label for="designation">Designation</label>
-                        <input type="text" id="designation" name="experienceInfoBeans[1].designation" placeholder="Enter Designation" class="form-control">
+                        <input type="text" name="experienceInfoBeans[1].designation" placeholder="Enter Designation" class="form-control">
                 </div>
             </div>
                 <div class="row">

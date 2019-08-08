@@ -1,6 +1,7 @@
 package com.techchefs.emp.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -23,7 +24,7 @@ public class EmployeeEducationalInfoBean implements Serializable{
 	@Column(name="college_name")
 	private String collegeName;
 	private String university;
-	private int yop;
+	private Date yop;
 	private double percentage;	 
 	private String location;
 	

@@ -47,11 +47,11 @@ public class EmployeeInfoBean implements Serializable{
 	private String email;
 	private String designation;
 	private Date dob;
-//	@Column(name="dept_id")
-//	private int departmentId;
-	@ManyToOne
-	@JoinColumn(name="dept_id")
-	private DepartmentInfoBean departmentId;
+	@Column(name="dept_id")
+	private int departmentId;
+//	@ManyToOne
+//	@JoinColumn(name="dept_id")
+//	private DepartmentInfoBean departmentId;
 //	@Column(name="mngr_id")
 //	private int managerId;
 	  @JoinColumn(name="mngr_id",referencedColumnName = "id")	  
