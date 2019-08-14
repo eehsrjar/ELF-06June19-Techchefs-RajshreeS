@@ -64,7 +64,7 @@ public class EmployeeInfoBean implements Serializable{
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "expPKBean.empInfoBean")
 	private List<EmployeeExperienceInfoBean> experienceInfoBeans;
 //	@LazyCollection(LazyCollectionOption.FALSE)
-//	@ManyToMany(cascade = CascadeType.ALL,mappedBy="infoBeans")
+//	@ManyToMany(cascade = CascadeType.ALL,mappedBy="infoBeans" fetch=fetchType.Eager)
 //	private List<TrainingInfoBean> trainingInfoBeans;
 	@Id
 	private int id;
@@ -90,7 +90,7 @@ public class EmployeeInfoBean implements Serializable{
 //	@Column(name="mngr_id")
 //	private int managerId;
 	  @JoinColumn(name="mngr_id",referencedColumnName = "id")	  
-	  @ManyToOne(cascade = CascadeType.ALL)
+	  @ManyToOne(cascade = CascadeType.PERSIST)
 	  private EmployeeInfoBean managerId;
 	public EmployeeOtherInfoBean getEmployeeOtherInfoBean() {
 		return employeeOtherInfoBean;
