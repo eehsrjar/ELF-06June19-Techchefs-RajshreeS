@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
+<%@page import="org.springframework.web.servlet.support.ServletUriComponentsBuilder"%>
 <%@page import="com.techchefs.emp.dto.EmployeeInfoBean"%>
+<%
+	String baseURL=ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -24,14 +28,14 @@
 
 
 		<!-- <form class="form-inline my-2 my-lg-0" action="./validate" method="GET"> -->
-		<form class="form-inline my-2 my-lg-0 ml-auto" action="../validator/validate/employee/search" method="GET">
+		<form class="form-inline my-2 my-lg-0 ml-auto" action="<%=baseURL%>/validator/validate/employee/search" method="GET">
 			<input class="form-control mr-sm-2" type="search"
 				placeholder="Search" name="id" aria-labelSearch>
 				<!-- <input type="hidden" name="url" value="search"> -->
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
 		<h6 class="ml-auto">Welcome ${bean.empName }</h6>
-		<a class="ml-auto" href="./logout">Logout</a>
+		<a class="ml-auto" href="<%=baseURL%>/login/logout">Logout</a>
 	</nav>
 	<a class="ml-auto" href="../employee/updateEmployee">Update Profile</a>
 	<div class="container">

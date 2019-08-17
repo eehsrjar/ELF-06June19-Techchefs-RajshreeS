@@ -15,6 +15,7 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -34,6 +35,9 @@ import com.techchefs.emp.dto.EmployeeInfoBean;
 import com.techchefs.emp.dto.EmployeeOtherInfoBean;
 import com.techchefs.emp.dto.EmployeeResponse;
 
+import lombok.extern.java.Log;
+@Log
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/controller")
 public class EmployeeRestController {
@@ -72,7 +76,32 @@ public class EmployeeRestController {
 		}
 		return employeeResponse;
 	}
-
+		
+	@GetMapping(value = "/getEmployeesById", produces =  MediaType.APPLICATION_JSON_VALUE)
+	public EmployeeResponse getEmployees(@RequestParam int id,HttpServletRequest req) {
+		//return dao.getEmployeeInfo(id);
+		EmployeeResponse employeeResponse=new EmployeeResponse();
+		log.info("Req.getsession"+req.getSession(false));
+		if(req.getSession(false)!=null) {
+		//EmployeeInfoBean bean=dao.getEmployeeInfo(id);
+		List<EmployeeInfoBean> beans=dao.getEmployeeIds(id);
+		if(beans !=null) {
+			employeeResponse.setStatusCode(201);
+			employeeResponse.setMessage("Successfull");
+			employeeResponse.setDescription("Employee Data found successfully");
+			employeeResponse.setBeans(beans);
+		}else {
+			employeeResponse.setStatusCode(401);
+			employeeResponse.setMessage("Failure");
+			employeeResponse.setDescription("Employee Data not found");
+		}return employeeResponse;
+		}else {
+			employeeResponse.setStatusCode(501);
+			employeeResponse.setMessage("Failure");
+			employeeResponse.setDescription("Please Login first");
+		}
+		return employeeResponse;
+	}
 	@GetMapping(value = "/getAllEmployee", produces = MediaType.APPLICATION_JSON_VALUE)
 	public EmployeeResponse getAllEmployee(HttpServletRequest req) {
 		//return dao.getAllEmployeeInfo();

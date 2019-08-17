@@ -1,7 +1,11 @@
 			<!DOCTYPE html>                                                                        
 			
+<%@page import="org.springframework.web.servlet.support.ServletUriComponentsBuilder"%>
 <%@page import="com.techchefs.emp.dto.EmployeeInfoBean"%>
 <%@page import="java.util.ArrayList"%>
+<%
+	String baseURL=ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+%>
 <html>                                                                                 
 			<head>                                                                                 
 			<meta charset="ISO-8859-1">                                                          
@@ -23,13 +27,13 @@
 			                                                                                      
 			                                                                                      
 			    <!-- <form class="form-inline my-2 my-lg-0" action="./validate" method="GET"> -->
-			    <form class="form-inline my-2 my-lg-0" action="../employee/search" method="GET">                                  
+			    <form class="form-inline my-2 my-lg-0" action="<%=baseURL%>/validator/validate/employee/search" method="GET">                                  
 			      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="id" aria-labelSearch>
 			      <!-- <input type="hidden" name="url" value="search"> -->
 			      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			    </form>                                                                           
 				<h6>Welcome ${bean.empName }</h6>
-			    <a class="ml-auto" href="./logout">Logout</a>                  
+			    <a class="ml-auto" href="<%=baseURL%>/login/logout">Logout</a>                  
 			</nav> 
 			<%ArrayList<EmployeeInfoBean> arrId=(ArrayList<EmployeeInfoBean>)request.getAttribute("ArrayIds"); %>                                                                               
 			 <div class="card-body"> 
@@ -46,7 +50,7 @@
 			<% for (EmployeeInfoBean employeeInfoBean : arrId) {%>
 			    <tr>                                
 			     <%--  <td><a href="./validate?url=fetch&emp=<%=employeeInfoBean.getId() %>"><%=employeeInfoBean.getId() %></a></td> --%>
-			      <td><a href="../employee/fetch?emp=<%=employeeInfoBean.getId() %>"><%=employeeInfoBean.getId() %></a></td>              
+			      <td><a href="<%=baseURL%>/validator/validate/employee/fetch?emp=<%=employeeInfoBean.getId() %>"><%=employeeInfoBean.getId() %></a></td>              
 			      <td><%=employeeInfoBean.getEmpName() %></td>                    
 			    </tr>                               
 			<%} %>

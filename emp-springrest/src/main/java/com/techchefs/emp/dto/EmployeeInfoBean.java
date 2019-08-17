@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Data;
 import lombok.ToString;
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 //@XmlRootElement(name="employee-info-bean")
 @JsonRootName(value="employee-info")
 //@XmlAccessorType(XmlAccessType.FIELD)
