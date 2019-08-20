@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    
+    <div id="mydiv"></div>
+    <script type="text/babel">
+    class MyForm extends React.Component {
+        constructor(props) {
+        super(props)
+            console.log("Inside constructor");
+        this.state = {
+            input: "Hello"
+        };
+        this.addInput=this.addInput.bind(this);//use bind when not using arrow function
+    }
+   /*  addInput =() => {
+       this.setState({ input: "Rajshree"})
+    } */
+addInput(){
+    this.setState({ input: "Rajshree"})
+}
+
+    componentDidMount(){
+        console.log("Inside ComponentDidMount");
+    }   
+  render() {
+      console.log("Inside render");
+    return (
+      <form>
+        <h1>Hello</h1>
+       
+        <input type="text" value={this.state.input} placeholder="Hello"/>
+        <button onClick={this.addInput}>Change</button>
+
+      </form>
+    );
+  }
+}
+ReactDOM.render(<MyForm />, document.getElementById('mydiv'));
+/* class InputAdder extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            inputs: []
+        }
+    }
+
+    addInput = ev => {
+        this.setState(prev => ({ inputs: [...prev.inputs, 'Hi'] }))
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.addInput}>Add input</button>
+                {this.state.inputs.map(node => <input type="text"/>)}
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<InputAdder/>, document.getElementById('mydiv')) */
+ </script>
+</body>
+</html>

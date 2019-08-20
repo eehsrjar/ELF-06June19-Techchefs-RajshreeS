@@ -15,7 +15,7 @@ public class HibernateUtil {
 	private HibernateUtil() {}
 
 	private static SessionFactory buildSessionFactory() {
-		return  new Configuration().configure().addAnnotatedClass(EmployeeInfoBean.class).buildSessionFactory();
+		return  new Configuration().configure().buildSessionFactory();
 	}
 
 	private static SessionFactory getSessionFactory() {
