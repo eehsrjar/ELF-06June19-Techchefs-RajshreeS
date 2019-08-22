@@ -40,7 +40,7 @@ public class LibraryServiceImpl implements LibraryService {
 		} else {
 			response.setMessage("failure");
 			response.setStatusCode(501);
-			response.setDescription("Login Failed");
+			response.setDescription("Invalid Credentials");
 		}
 		return response;
 	}
@@ -107,6 +107,30 @@ public class LibraryServiceImpl implements LibraryService {
 			response.setDescription("Login First");
 		}
 		return response;
+	}
+	
+	@Override
+	public Response searchUserByName(String name, HttpServletRequest request) {
+		Response response = new Response();
+		//if (request.getSession(false) != null) {
+		List<UserBean> userList=(List<UserBean>) userRepository.findByFirstName(name);	
+		if(userList.size() != 0) {
+			response.setMessage("success");
+			response.setStatusCode(201);
+			response.setBeans(userList);
+			response.setDescription("Got all users Successfully");
+		}else {
+			response.setMessage("failure");
+			response.setStatusCode(501);
+			response.setDescription("No user Found");
+		}
+		return response;
+//		} else {
+//			response.setMessage("failure");
+//			response.setStatusCode(501);
+//			response.setDescription("Login First");
+//		}
+//		return response;
 	}
 	
 	@Override
@@ -185,6 +209,8 @@ public class LibraryServiceImpl implements LibraryService {
 		response.setDescription("Logout Successfull");
 		return response;
 	}
+
+	
 
 	
 	
