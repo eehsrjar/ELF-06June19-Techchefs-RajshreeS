@@ -6,9 +6,29 @@ export default class AllUsers extends Component {
     constructor(props){
         super(props);
         this.state={
-            beans:JSON.parse(localStorage.getItem("beans"))
+            beans:null
         }
+        if(localStorage.getItem("beans")!=null)
+    {
+        this.state.beans=JSON.parse(localStorage.getItem("beans"));
     }
+    }
+
+    // componentDidMount(){
+    //     Axios.get('http://localhost:8080/getAllUsers').then((response)=>{
+    //         console.log('Response Object',response.data);
+    //         if(response.data.message === "success"){
+    //           localStorage.setItem("beans",JSON.stringify(response.data.beans));
+    //           this.props.history.push('/allUsers');          
+    //         }else{
+    //           this.props.history.push('/AdminHome');
+    //           localStorage.setItem('nouser',response.data.description);
+    //         }
+    //     }).catch((error)=>{
+    //         console.log('Error',error);
+    //     })
+    // }
+
     deleteUser(e){
 
     }

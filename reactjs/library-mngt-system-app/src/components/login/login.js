@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './login.css';
 import Axios from 'axios';
+import { Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import booksimage from '../../images/books.jpg';
 
 export default class Login extends Component {
@@ -9,7 +11,7 @@ export default class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            msg:localStorage.getItem('msg')
+            msg: localStorage.getItem('msg')
         }
         this.submituserLoginForm = this.submituserLoginForm.bind(this);
     }
@@ -33,50 +35,54 @@ export default class Login extends Component {
                 } else if (response.data.beans[0].userType === 'normalUser') {
                     this.props.history.push('/userHome');
                     localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
-                }else {
+                } else {
                     this.props.history.push('/');
-                    localStorage.setItem('msg',response.data.description);
+                    localStorage.setItem('msg', response.data.description);
                 }
             }
-            }).catch((error) => {
-                console.log('Error', error);
-            })
+        }).catch((error) => {
+            console.log('Error', error);
+        })
     }
-    componentDidMount(){
+    componentDidMount() {
         localStorage.removeItem('msg');
     }
     render() {
         return (
             <div className="background">
                 {/*  <img src={booksimage} /> */}
-                <h2 className="margin">Library Management System</h2>
-            <div className="row">  
-            <div className="col-md-4"></div> 
-            <div className="card col-md-4">
-                <div className="card-header">
-                    <h3> Login</h3>
-                </div>
-                <div>{this.state.msg}</div>
-                <div className="card-body">
-                    <form method="post" onSubmit={this.submituserLoginForm}>              
-
-                <div className="form-group">
-                        <label>Email ID:</label>
-                        <input type="text" className="form-control" name="email" value={this.state.email} onChange={(event) => { this.setState({ email: event.target.value }) }} />
-                </div>
-                <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" name="password" value={this.state.password} onChange={(event) => { this.setState({ password: event.target.value }) }} />
-                </div>
-                <div className="form-group">
-                        <input type="submit" className="button" value="Login" />
+                <h1 className="space">Library Management System</h1>
+                <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="card col-md-4">
+                        <div className="card-header">
+                            <h3> Login</h3>
                         </div>
-                    </form>
-                </div>
+                        <div>{this.state.msg}</div>
+                        <div className="card-body">
+                            <form method="post" onSubmit={this.submituserLoginForm}>
 
-            </div>
-            
-            </div>
+                                <div className="form-group">
+                                    <label>Email ID:</label>
+                                    <input type="text" className="form-control" name="email" value={this.state.email} onChange={(event) => { this.setState({ email: event.target.value }) }} />
+                                </div>
+                                <div className="form-group">
+                                    <label>Password</label>
+                                    <input type="password" className="form-control" name="password" value={this.state.password} onChange={(event) => { this.setState({ password: event.target.value }) }} />
+                                </div>
+                                <div className="form-group">
+                                    <input type="submit" className="form-control" className="btn btn-primary" value="Login" />
+                                </div>
+                                <div className="form-group">
+                                <Link className="nav-link" to="/addUser">Register</Link>
+                                <Link className="nav-link" to="/">Forgot Password</Link>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         )
     }
