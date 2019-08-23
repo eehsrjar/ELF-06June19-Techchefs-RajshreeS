@@ -5,10 +5,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Entity(name="customer")
+@Entity
+@Table(name="customer")
 public class CustomerBean implements Serializable{
 	@Id
 	private int id;

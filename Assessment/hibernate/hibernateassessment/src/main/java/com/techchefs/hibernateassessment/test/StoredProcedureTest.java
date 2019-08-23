@@ -14,8 +14,8 @@ import lombok.extern.java.Log;
 public class StoredProcedureTest {
 	public static void main(String[] args) {
 		Session session=HibernateUtil.openSession();
-		StoredProcedureQuery query=session.createStoredProcedureCall("getDetails");
-		session.close();
+		StoredProcedureQuery query=session.createStoredProcedureCall("getDetails",Student.class);
+		
 		List<Student> list=(List<Student>)query.getResultList();
 		
 		  for (Student student : list) {

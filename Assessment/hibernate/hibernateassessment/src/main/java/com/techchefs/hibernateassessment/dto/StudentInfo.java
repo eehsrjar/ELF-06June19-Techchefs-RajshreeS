@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Entity(name="student_info")
+@Entity
+@Table(name="student_info")
 public class StudentInfo implements Serializable{
 	@Id
 	private int rollNum;

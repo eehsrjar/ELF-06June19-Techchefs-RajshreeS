@@ -5,10 +5,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Entity(name="student_other_info")
+@Entity
+@Table(name="student_other_info")
 public class StudentOtherInfo implements Serializable{
 	@Id
 	private int rollNum;

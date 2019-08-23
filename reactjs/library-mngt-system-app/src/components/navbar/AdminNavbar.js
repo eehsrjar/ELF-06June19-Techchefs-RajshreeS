@@ -35,11 +35,12 @@ class AdminNavbar extends Component {
         e.preventDefault();
         Axios.get('http://localhost:8080/logout', null
         ).then((response) => {
+            localStorage.clear();
             console.log('Response Object', response.data);
             if (response.data.message === "success") {
                 console.log(this.props);
                 this.props.history.push('/');
-                localStorage.setItem('msg', response.data.description);
+                localStorage.setItem('logoutmsg', response.data.description);
             }
 
         }).catch((error) => {

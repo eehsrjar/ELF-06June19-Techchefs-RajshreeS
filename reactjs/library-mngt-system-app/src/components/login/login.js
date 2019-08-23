@@ -27,17 +27,21 @@ export default class Login extends Component {
             if (response.data.message === "success") {
                 console.log(response.data.beans[0].userType);
                 if (response.data.beans[0].userType === 'admin') {
+                    localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
                     this.props.history.push('/adminHome');
-                    localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
+                  
                 } else if (response.data.beans[0].userType === 'librarian') {
+                    localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
                     this.props.history.push('/librarianHome');
+                   
+                } else if (response.data.beans[0].userType === 'Normal User') {
                     localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
-                } else if (response.data.beans[0].userType === 'normalUser') {
                     this.props.history.push('/userHome');
-                    localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
+                   
                 } else {
+                    localStorage.setItem('logoutmsg', response.data.description);
                     this.props.history.push('/');
-                    localStorage.setItem('msg', response.data.description);
+                   
                 }
             }
         }).catch((error) => {
@@ -45,7 +49,7 @@ export default class Login extends Component {
         })
     }
     componentDidMount() {
-        localStorage.removeItem('msg');
+        localStorage.removeItem('logoutmsg');
     }
     render() {
         return (
@@ -58,12 +62,12 @@ export default class Login extends Component {
                         <div className="card-header">
                             <h3> Login</h3>
                         </div>
-                        <div>{this.state.msg}</div>
+                        <div>{localStorage.getItem('logoutmsg')}</div>
                         <div className="card-body">
                             <form method="post" onSubmit={this.submituserLoginForm}>
 
                                 <div className="form-group">
-                                    <label>Email ID:</label>
+                                    <label>Email ID</label>
                                     <input type="text" className="form-control" name="email" value={this.state.email} onChange={(event) => { this.setState({ email: event.target.value }) }} />
                                 </div>
                                 <div className="form-group">

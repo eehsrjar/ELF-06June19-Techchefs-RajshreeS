@@ -33,11 +33,12 @@ class UserNavbar extends Component {
         e.preventDefault();
         Axios.get('http://localhost:8080/logout', null
         ).then((response) => {
+            localStorage.clear();
             console.log('Response Object', response.data);
             if (response.data.message === "success") {
                 console.log(this.props);
                 this.props.history.push('/');
-                localStorage.setItem('msg', response.data.description);
+                localStorage.setItem('logoutmsg', response.data.description);
             }
 
         }).catch((error) => {
@@ -52,11 +53,7 @@ class UserNavbar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Add User</Nav.Link>
-                            {/*  <LinkContainer to="/viewUsers">View Users</LinkContainer> */}
-                            <Link className="nav-link" to="/viewUsers">View users</Link>
-
+                        <Link className="nav-link" to="/userHome">Home</Link>
                         </Nav>
                         <Form onSubmit={this.search} inline className=" mr-auto">
                             <FormControl type="text" name="search" onChange={(event) => { this.setState({ search: event.target.value }) }} value={this.state.search} placeholder="Search" className="mr-sm-2" />

@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import Axios from 'axios';
 import { withRouter, Link } from 'react-router-dom';
 
-export default class LibrarianNavbar extends Component {
+class LibrarianNavbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,11 +33,12 @@ export default class LibrarianNavbar extends Component {
         e.preventDefault();
         Axios.get('http://localhost:8080/logout', null
         ).then((response) => {
+            localStorage.clear();
             console.log('Response Object', response.data);
             if (response.data.message === "success") {
                 console.log(this.props);
                 this.props.history.push('/');
-                localStorage.setItem('msg', response.data.description);
+                localStorage.setItem('logoutmsg', response.data.description);
             }
 
         }).catch((error) => {
@@ -52,10 +53,7 @@ export default class LibrarianNavbar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Add User</Nav.Link>
-                            {/*  <LinkContainer to="/viewUsers">View Users</LinkContainer> */}
-                            <Link className="nav-link" to="/viewUsers">View users</Link>
+                        <Link className="nav-link" to="/librarianHome">Home</Link>                       
 
                         </Nav>
                         <Form onSubmit={this.search} inline className=" mr-auto">
@@ -70,3 +68,4 @@ export default class LibrarianNavbar extends Component {
         )
     }
 }
+export default withRouter(LibrarianNavbar)

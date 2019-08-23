@@ -5,10 +5,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Entity(name="test")
+@Entity
+@Table(name="test")
 public class TestBean implements Serializable{
 	@Id
 	private int id;
